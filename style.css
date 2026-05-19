@@ -24,15 +24,32 @@ html { scroll-behavior: smooth; }
     padding: 0;
     box-sizing: border-box;
 }
-
-/* تأكد إن الـ body بيسمح بالتمرير */
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     display: flex;
-    flex-direction: column; /* عشان الفوتر يترص تحت الـ container */
-    background-color: #0f172a; /* لون احتياطي */
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    overflow-x: hidden;
+
+    /* 1. اللون الاحتياطي الأساسي */
+    background-color: #050a18; 
+
+    /* 2. تدرج الألوان المتنقل (الشرطي والذهبي) */
+    background-image: linear-gradient(125deg, #050a18, #0a1128, #1c315e, #8a6d3b, #050a18);
+    
+    /* 3. حجم الخلفية (أهم سطر عشان الألوان تتحرك) */
+    background-size: 400% 400%;
+    
+    /* 4. تثبيت الخلفية أثناء السكرول */
+    background-attachment: fixed;
+
+    /* 5. تشغيل الأنيميشن غصب عن المتصفح أونلاين */
+    animation: policeGradient 15s ease infinite;
+    -webkit-animation: policeGradient 15s ease infinite;
+    -moz-animation: policeGradient 15s ease infinite;
 }
 
 @keyframes policeGradient {
