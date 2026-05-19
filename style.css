@@ -676,3 +676,45 @@ main {
         grid-template-columns: 1fr;
     }
 }
+/* الأكواد دي هتشتغل على الموبايل بس */
+@media screen and (max-width: 768px) {
+    
+    /* 1. تظبيط الحاوية الرئيسية (Container) */
+    .container, body {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }
+
+    /* 2. تظبيط حجم الخطوط (العناوين الكبيرة بتبوظ في الموبايل) */
+    h1 {
+        font-size: 1.8rem !important; /* أو بالبكسل زي 28px */
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    p, span, a {
+        font-size: 0.95rem !important; /* حجم مريح للعين على الشاشات الصغيرة */
+    }
+
+    /* 3. تظبيط الكروت أو العناصر اللي جنب بعض */
+    /* لو عامل عناصر بجانب بعض (Flex) خليهم ينزلوا تحت بعض */
+    .flex-container {
+        flex-direction: column !important;
+    }
+
+    /* لو مستخدم Grid خليه يعرض عمود واحد بس بدل 3 أو 4 */
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* 4. تظبيط الصور والفيديوهات عشان متخرجش برة الشاشة */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+}
