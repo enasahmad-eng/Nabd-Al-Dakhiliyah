@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="icon" type="image/jpeg" href="00.jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نَبْضُ الدَّاخِلِيَّةِ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="main-hero">
+        <header class="navbar">
+            <div class="site-logo"><img src="1776688663891.png" alt="Logo"></div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">تاريخ الوزارة</a>
+                <a href="rules.html">قوانين الأمان</a>
+                 <a href="roles.html">أدوار هامة</a>
+                <a href="departments.html">قطاعات الوزارة</a>
+                <a href="emergency.html">أرقام الطوارئ</a>
+                <a href="important.html">توعية</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+            <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
+        </header>
+	</section>
+<div class="emergency-section">
+    <div class="emergency-grid">
+        
+    <div class="card">
+    <div class="image-frame">
+        <img src="اسعاف.jpg" alt="Ambulance Team" class="main-img">
+        
+    </div>
+
+    <div class="card-info">
+        <h3 class="decorated-title">الإسْعَاف</h3>
+        <span class="decorated-num" data-target="123">0</span>
+    </div>
+</div>
+
+       <div class="card">
+    <div class="image-frame">
+        <img src="نجده.jpg" alt="قوات النجدة" class="main-img">
+    </div>
+
+    <div class="card-info">
+        <h3 class="decorated-title">النَّجْدَة</h3>
+        <span class="decorated-num" data-target="122">0</span>
+    </div>
+</div>
+
+     <div class="card">
+    <div class="image-frame">
+        <img src="مطافي.jpg" alt="رجال المطافئ" class="main-img">
+    </div>
+
+    <div class="card-info">
+        <h3 class="decorated-title"> المَطَافِئ</h3>
+        <span class="decorated-num" data-target="180">0</span>
+    </div>
+</div>
+
+      <div class="card">
+    <div class="image-frame">
+        <img src="مرور.jpg" alt="مرور القاهرة" class="main-img">
+    </div>
+    <div class="card-info">
+        <h3 class="decorated-title">مُرور القَاهِرة</h3>
+        <span class="decorated-num" data-target="136">0</span>
+    </div>
+</div>
+
+        <div class="card">
+    <div class="image-frame">
+        <img src="معلوماتية.jpg" alt="مكافحة جرائم المعلوماتية" class="main-img">
+    </div>
+
+    <div class="card-info">
+        <h3 class="decorated-title">مكافحة جَرائم المَعلوماتية</h3>
+        <span class="decorated-num" data-target="108">0</span>
+    </div>
+</div>
+<div class="card">
+    <div class="image-frame">
+        <img src="امن عام.jpg" alt="الأمن العام" class="main-img">
+    </div>
+
+    <div class="card-info">
+        <h3 class="decorated-title">الأمْن العَام</h3>
+        <span class="decorated-num" data-target="115">0</span>
+    </div>
+</div>
+    </div>
+</div>
+<!-- زر العودة للأعلى -->
+<div id="scrollToTop" class="back-to-top">
+    <img src="1776688663891.png" alt="Top">
+</div>
+<script src="index.js"></script>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-logo">🛡️ نبض الداخلية</div>
+        <p class="copyrighttext">
+            جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة 
+            <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span>
+        </p>
+        <div class="footer-line"></div>
+    </div>
+</footer>
+<script>
+// دالة تشفير الأرقام (تأثير Matrix الأنيق)
+function decodeNumberEffect() {
+    const counters = document.querySelectorAll('.decorated-num');
+    
+    counters.forEach(counter => {
+        const finalValue = counter.getAttribute('data-target');
+        if (!finalValue) return;
+
+        counter.style.opacity = "0.6"; // شفافية بسيطة أثناء التشفير
+        let iteration = 0;
+        
+        const interval = setInterval(() => {
+            counter.innerText = finalValue.split("")
+                .map((letter, index) => {
+                    if(index < iteration) return finalValue[index];
+                    return Math.floor(Math.random() * 10);
+                })
+                .join("");
+            
+            if(iteration >= finalValue.length) {
+                clearInterval(interval);
+                counter.style.opacity = "1";
+                // اللون الذهبي يظهر فقط في النهاية كلحظة تأكيد
+                counter.style.color = "#c5b358"; 
+            }
+            iteration += 1 / 10;
+        }, 50);
+    });
+}
+
+// دالة تأثيرات الكروت (الماوس والنقر)
+function addEnhancedCardEffects() {
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+        // 1. تأثير حركة الماوس (كشاف هادئ)
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+
+        // 2. تأثير النقر (استجابة أمنية سريعة)
+        card.addEventListener('click', function() {
+            this.style.transform = "scale(0.98)";
+            this.style.filter = "brightness(1.2)";
+            
+            setTimeout(() => {
+                this.style.transform = "scale(1)";
+                this.style.filter = "none";
+            }, 200);
+        });
+    });
+}
+
+// تشغيل الوظائف عند تحميل الصفحة
+window.addEventListener('DOMContentLoaded', () => {
+    decodeNumberEffect();
+    addEnhancedCardEffects();
+});
+</script>
+</body>
+
+<style>
+/* القسم الخارجي */
+.emergency-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.card {
+    background: rgba(6, 22, 48, 0.85);
+    border: 2px solid #c5a059;
+    border-radius: 30px;
+    padding: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* تحديد حول الصورة */
+.image-frame {
+    width: 100%;
+    border: 3px solid #c5a059; /* إطار ذهبي حول الصورة */
+    border-radius: 15px;
+    overflow: hidden; /* لقص حواف الصورة مع الإطار */
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.main-img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+.card:hover .main-img {
+    transform: scale(1.05); /* حركة زووم خفيفة عند الوقوف على الكارت */
+}
+
+/* الحاوية الكبرى للتوسيط */
+.emergency-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* الشبكة: اتنين في كل صف */
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* السر هنا: اتنين في الصف */
+    gap: 30px; /* المسافة بين المربعات */
+    width: 90%;
+    max-width: 900px;
+}
+
+/* تصميم المربع */
+.card {
+    background: rgba(6, 22, 48, 0.8);
+    border: 2px solid #c5a059;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
+}
+
+/* تحديد الصورة */
+.image-frame {
+    width: 100%;
+    border: 3px solid #c5a059;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+/* تأثير الإضاءة الأمنية الثابتة خلف الصورة */
+.image-frame::before {
+   content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(197, 179, 88, 0.07) 0%, /* شفافية عالية جداً */
+        transparent 60%
+    );
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* حركة بسيطة جداً عند الـ Hover فقط */
+.card:hover .image-frame::before {
+    animation: gentle-pulse 2s infinite ease-in-out;
+    opacity: 1;
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.main-img {
+    width: 100%;
+    display: block;
+    height: 180px; /* ارتفاع ثابت للصور عشان المربعات تبقى مقاس واحد */
+    object-fit: cover;
+}
+
+/* زخرفة الاسم */
+.card h3 {
+    font-family: 'Aref Ruqaa', serif; /* خط عربي مزخرف */
+    font-size: 24px;
+    margin-top: 15px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+.small-text { font-size: 1.4rem; }
+
+/* زخرفة الرقم */
+.decorated-num {
+    display: inline-block;
+    transition: transform 0.2s;
+    color: #ffd700;
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    transition: color 0.5s ease, opacity 0.5s ease;
+    font-variant-numeric: tabular-nums; /* لمنع اهتزاز الأرقام أثناء العد */
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.6), 2px 2px 4px #000;
+}
+/* تنسيق القسم السفلي للكارت لضمان السنترة */
+.card-info {
+    text-align: center; /* سنترة كل حاجة في النص */
+    padding: 15px 0;
+}
+
+.card h3, .decorated-title {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    text-align: center;
+    display: block;
+
+    /* السطور دي هي اللي هتشيل المربع الأبيض */
+    background: linear-gradient(to bottom, #fcf6ba, #bf953f) !important;
+    -webkit-background-clip: text !important; /* لمتصفحات كروم وإيدج */
+    background-clip: text !important;         /* للمتصفحات التانية */
+    -webkit-text-fill-color: transparent !important; /* إخفاء اللون الأصلي لإظهار التدرج */
+    
+    /* التوهج (بدل filter هنستخدم text-shadow لأنه أضمن ومبيعملش مربعات) */
+    text-shadow: 0 0 10px rgba(191, 149, 63, 0.5);
+    
+    transition: all 0.4s ease-out;
+}
+
+/* التفاعل عند الماوس بدون مشاكل */
+.card:hover h3, .card:hover .decorated-title {
+    transform: translateY(-3px) scale(1.05) !important;
+    text-shadow: 0 0 15px rgba(252, 246, 186, 0.9), 
+                 0 0 25px rgba(191, 149, 63, 0.7) !important;
+}
+
+/* للموبايل: ينزلوا كارت واحد تحت بعض عشان الحجم */
+@media (max-width: 650px) {
+    .emergency-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* للموبايل يرجعوا كارت واحد بس عشان الزحمة */
+@media (max-width: 768px) {
+    .emergency-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* تفاعل الكارت عند المرور عليه */
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+}
+
+.card:hover .main-img {
+    transform: scale(1.08); /* زووم أوضح لصورة العربية */
+}
+.card:hover {
+    border-color: #ffd700;
+    box-shadow: 0 0 30px rgba(197, 160, 89, 0.3);
+    transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+    .emergency-grid { grid-template-columns: 1fr; }
+    .num.decorated { font-size: 2.8rem; }
+}
+/* تأثير التوهج الذي يتبع الماوس */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(212, 175, 55, 0.15) 0%, 
+                transparent 70%);
+    pointer-events: none; /* لكي لا يمنع الضغط على الكارت */
+    z-index: 2;
+}
+/* تأثير الكشاف خلف الماوس */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+                rgba(212, 175, 55, 0.1) 0%, 
+                transparent 60%);
+    pointer-events: none;
+    z-index: 5;
+}
+</style>
+	</html>

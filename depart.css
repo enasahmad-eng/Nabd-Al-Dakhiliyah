@@ -1,0 +1,235 @@
+/* 1. الخلفية التفاعلية الهادئة */
+.contact-body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #050a18; /* الكحلي الأساسي */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(28, 49, 94, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(18, 35, 69, 0.4) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    animation: backgroundPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundPulse {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+/* 2. السنترة الكاملة */
+.contact-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+/* حاوية الجداول */
+.info-tables-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    direction: rtl; /* اتجاه عربي */
+}
+
+/* التنسيق الأساسي للجدول */
+.styled-table {
+    width: 100%;
+    max-width: 900px; /* تقدري تتحكمي في أقصى عرض يوصل له هنا */
+    margin: 25px auto; /* زيادة المسافة بين الجداول عشان الزحمة */
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background: rgba(10, 20, 40, 0.8);
+    border-radius: 15px;
+    overflow: hidden; /* عشان الزوايا تكون مدورة */
+    border: 1px solid #bf953f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+}
+
+/* رأس الجدول المزخرف */
+.styled-table thead tr {
+    background: linear-gradient(90deg, #bf953f, #fcf6ba, #bf953f);
+}
+
+.styled-table th {
+    padding: 15px;
+    color: #050a18; /* لون كحلي غامق للنص فوق الذهبي */
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 24px;
+ text-shadow: 0 0 10px rgba(5, 10, 24, 0.5);
+}
+
+/* تنسيق الصفوف */
+.styled-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(191, 149, 63, 0.2);
+    color: #e0e0e0;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* خلية الأيقونات */
+.icon-cell {
+    width: 50px;
+    font-size: 24px;
+    text-align: center;
+    background: rgba(191, 149, 63, 0.05);
+}
+
+/* تأثير الحركة عند مرور الماوس */
+.styled-table tbody tr {
+    transition: all 0.3s ease;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.styled-table tbody tr:hover {
+    background: rgba(191, 149, 63, 0.15); /* توهج ذهبي خفيف خلف الصف */
+    transform: scale(1.01); /* تكبير بسيط جداً */
+}
+
+/* توهج الجدول بالكامل عند الماوس */
+.styled-table:hover {
+    box-shadow: 0 0 25px rgba(191, 149, 63, 0.4);
+    border: 2px solid #bf953f !important; /* تقوية الإطار الذهبي */
+}
+
+/* تنوع ألوان الصفوف (اختياري لشكل أنظم) */
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+/* تنسيق الـ Footer */
+.main-footer {
+    background: linear-gradient(to top, rgba(5, 10, 24, 1), rgba(5, 10, 24, 0.8));
+    padding: 40px 20px 20px;
+    text-align: center;
+    direction: rtl;
+    border-top: 1px solid rgba(191, 149, 63, 0.3); /* خط ذهبي نحيف من فوق */
+    margin-top: 50px;
+}
+
+/* شعار الفريق في الـ Footer */
+.footer-logo {
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 24px;
+    color: #fcf6ba;
+    text-shadow: 0 0 10px rgba(191, 149, 63, 0.5);
+    margin-bottom: 15px;
+}
+
+/* نص الحقوق */
+.copyrighttext {
+    color: #cbd5e1;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    opacity: 0.8;
+}
+
+/* اسم الفريق المتوهج */
+.team-name {
+    color: #bf953f;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.team-name:hover {
+    filter: drop-shadow(0 0 8px rgba(191, 149, 63, 0.8));
+    transform: scale(1.1);
+}
+
+/* الخط المزخرف السفلي */
+.footer-line {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #bf953f, transparent);
+    margin: 20px auto 0;
+}
+.back-to-top {
+    position: fixed; /* يخليها ثابتة في مكانها حتى لو حركتي الصفحة */
+    bottom: 20px;    /* المسافة من تحت */
+    right: 20px;     /* المسافة من اليمين */
+    width: 60px;     /* عرض الدائرة */
+    height: 60px;    /* طول الدائرة */
+    border-radius: 50%; /* عشان تكون دائرية تماماً */
+    overflow: hidden;   /* عشان الصورة ما تطلعش بره الدائرة */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* تأثير وهج خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;   /* عشان تكون فوق كل عناصر الصفحة */
+}
+
+.back-to-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يخلي الصورة تملأ الدائرة من غير ما تتمط */
+}
+
+/* تأثير عند تمرير الماوس فوقها */
+.back-to-top:hover {
+    transform: scale(1.1); /* تكبر شوية */
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9); /* يزيد الوهج */
+}
+/* جسم الجدول يكون مخفياً في البداية */
+.styled-table tbody {
+  display: block; /* نستخدم block بدلاً من none لتفعيل الأنيميشن */
+    max-height: 0;   /* نبدأ بارتفاع صفر */
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 1.2s ease-in-out, opacity 1s ease-in-out; /* هنا نتحكم في البطء */
+}
+
+/* عندما نضغط عليه، يظهر بسلاسة */
+.styled-table.active tbody {
+   max-height: 500px; /* رقم كافٍ لاستيعاب كل النص */
+    opacity: 1;
+    padding-top: 10px; /* مساحة إضافية بعد العنوان لفك الضيق */
+
+}
+
+/* حركة بسيطة لظهور النص */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تغيير شكل الماوس ليعرف المستخدم أنه قابل للضغط */
+.styled-table thead {
+    cursor: pointer;
+}
+/* تكبير خط العنوان */
+.styled-table thead th {
+    font-size: 1.5rem; /* كبرنا العنوان اللي في الجزء الذهبي */
+    padding: 20px; /* زيادة المساحة الداخلية عشان العنوان "يرتاح" */
+}
+
+/* تكبير خط المهام (محتوى الجدول) */
+.styled-table td {
+    font-size: 1.1rem; /* كبرنا الكلام اللي جوه عشان يبان بوضوح */
+    line-height: 1.8; /* جربي 1.8 أو حتى 2 لإعطاء مساحة كافية للكلام */
+    padding: 20px 15px; /* زيادة الـ padding العلوي والسفلي لـ 20px */
+    text-align: right; /* التأكد من محاذاة الكلام لليمين بشكل صحيح */
+    padding-right: 25px; /* مسافة أمان قبل بداية الكلام من اليمين */
+    padding-left: 10px;  /* مسافة أمان من اليسار */
+}
+.icon-cell {
+    font-size: 1.5rem; /* تكبير حجم الإيموجي أو الأيقونة */
+    width: 60px; /* زيادة مساحة الخلية الجانبية */
+}
+#particles-js {
+    position: fixed; /* يخلي الخلفية ثابتة ومغطية الشاشة مهما عملتي Scroll */
+    width: 100vw;    /* عرض الشاشة بالكامل */
+    height: 100vh;   /* طول الشاشة بالكامل */
+    top: 0;
+    left: 0;
+    z-index: -1;     /* عشان يفضل ورا الكارد وكل المحتوى */
+}

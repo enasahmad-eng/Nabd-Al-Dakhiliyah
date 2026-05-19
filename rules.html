@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="icon" type="image/jpeg" href="00.jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نَبْضُ الدَّاخِلِيَّةِ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rules.css">
+</head>
+<body> 
+    <audio id="hoverSound" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3" preload="auto"></audio>
+<audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" preload="auto"></audio>
+    <section class="main-hero">
+        <header class="navbar">
+            <div class="site-logo"><img src="1776688663891.png" alt="Logo"></div>
+            <nav class="nav-links">
+                 <a href="index.html">الرئيسية</a>
+                <a href="about.html">تاريخ الوزارة</a>
+                 <a href="rules.html">قوانين الأمان</a>
+                 <a href="roles.html">أدوار هامة</a>
+                <a href="departments.html">قطاعات الوزارة</a>
+                <a href="emergency.html">أرقام الطوارئ</a>
+                <a href="important.html">توعية</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+            <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
+        </header>
+	</section>
+        <div class="laws-section">
+    <div class="law-card-glow">
+        <h2 class="law-title">⚖️ قوانين الأمان</h2>
+        
+        <div class="law-content">
+            <p class="intro-text">
+                تعمل وزارة الداخلية على تطبيق القوانين التي تهدف إلى حفظ الأمن والنظام داخل المجتمع، وحماية حقوق المواطنين وممتلكاتهم.
+            </p>
+
+            <div class="law-highlights">
+                <div class="law-item">
+                    <span class="law-icon">🚦</span>
+                    <p>تنظيم حركة المرور لضمان سلامة الطرق والحفاظ على الأرواح.</p>
+                </div>
+                <div class="law-item">
+                    <span class="law-icon">🔍</span>
+                    <p>منع الجرائم بمختلف أشكالها والحفاظ على الممتلكات العامة والخاصة.</p>
+                </div>
+                <div class="law-item">
+                    <span class="law-icon">⚖️</span>
+                    <p>تحقيق العدالة والمساواة حيث يخضع الجميع للقانون دون تمييز.</p>
+                </div>
+            </div>
+
+            <div class="law-footer">
+                <p>تحرص الوزارة على نشر الوعي بأهمية الالتزام بالقوانين لبناء مجتمع آمن ومنظم.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+   const hoverSnd = document.getElementById('hoverSound');
+
+// وظيفة لتشغيل الصوت بشكل آمن
+function playSafe(sound) {
+    // نطلب من المتصفح تشغيل الصوت ونعالج أي رفض (Promise)
+    const playPromise = sound.play();
+    
+    if (playPromise !== undefined) {
+        playPromise.then(_ => {
+            // الصوت اشتغل تمام
+        }).catch(error => {
+            // المتصفح منع الصوت (محتاج ضغطة واحدة من المستخدم في أي مكان بالصفحة)
+            console.log("الرجاء الضغط في أي مكان لتفعيل الصوت أول مرة");
+        });
+    }
+}
+
+document.querySelectorAll('.law-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        hoverSnd.currentTime = 0; // إعادة الصوت للبداية
+        hoverSnd.volume = 0.3;    // مستوى الصوت
+        playSafe(hoverSnd);
+    });
+});
+</script>
+<!-- زر العودة للأعلى -->
+<div id="scrollToTop" class="back-to-top">
+    <img src="1776688663891.png" alt="Top">
+</div>
+<script src="index.js"></script>
+	</body>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-logo">🛡️ نبض الداخلية</div>
+        <p class="copyrighttext">
+            جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة 
+            <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span>
+        </p>
+        <div class="footer-line"></div>
+    </div>
+</footer>
+	</html>

@@ -1,0 +1,382 @@
+/* 1. الخلفية التفاعلية الهادئة */
+.contact-body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #050a18; /* الكحلي الأساسي */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(28, 49, 94, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(18, 35, 69, 0.4) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    animation: backgroundPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundPulse {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+/* 2. السنترة الكاملة */
+.contact-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1;
+}
+
+    .back-to-top {
+    position: fixed; /* يخليها ثابتة في مكانها حتى لو حركتي الصفحة */
+    bottom: 20px;    /* المسافة من تحت */
+    right: 20px;     /* المسافة من اليمين */
+    width: 60px;     /* عرض الدائرة */
+    height: 60px;    /* طول الدائرة */
+    border-radius: 50%; /* عشان تكون دائرية تماماً */
+    overflow: hidden;   /* عشان الصورة ما تطلعش بره الدائرة */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* تأثير وهج خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;   /* عشان تكون فوق كل عناصر الصفحة */
+}
+
+.back-to-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يخلي الصورة تملأ الدائرة من غير ما تتمط */
+}
+
+/* تأثير عند تمرير الماوس فوقها */
+.back-to-top:hover {
+    transform: scale(1.1); /* تكبر شوية */
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9); /* يزيد الوهج */
+}
+.main-footer {
+    background: linear-gradient(to top, rgba(5, 10, 24, 1), rgba(5, 10, 24, 0.9));
+    width: 100%;
+    padding: 30px 0; /* زيادة المساحة العلوية والسفلية */
+    direction: rtl;
+    border-top: 1px solid rgba(191, 149, 63, 0.4);
+    
+    /* الخصائص السحرية للتوسيط */
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    justify-content: center; /* توسيط عمودي */
+    align-items: center;    /* توسيط أفقي */
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center; /* توسيط النصوص داخل الحاوية */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 350px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* المسافة بين النص والأيقونة */
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.team-name {
+    background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.copyrighttext {
+    color: #cbd5e1;
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0; /* إزالة الهوامش الافتراضية للـ p */
+}
+
+.footer-line {
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bf953f, transparent);
+    margin-top: 15px;
+}
+:root {
+    --gold-accent: #d4af37;
+    --cyan-glow: #00e5ff;
+    --dark-navy: #0b1624;
+}
+
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    background: transparent;
+    direction: rtl;
+}
+
+.cyber-report-card {
+    background: rgba(11, 22, 36, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 20px;
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+.main-title {
+    color: var(--gold-accent);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.security-badge {
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.intel-box {
+    background: rgba(255, 255, 255, 0.05);
+    border-right: 4px solid var(--gold-accent);
+    padding: 15px;
+    margin: 20px 0;
+    line-height: 1.8;
+    color: #cfd8dc;
+}
+
+.highlight-cyan { color: var(--cyan-glow); font-weight: bold; }
+.gold-text { color: var(--gold-accent); }
+
+/* تنسيق برواز الصورة */
+.media-container {
+    margin: 30px 0;
+    border: 2px solid var(--gold-accent);
+    padding: 5px;
+    position: relative;
+}
+
+.captured-img {
+    width: 100%;
+    display: block;
+}
+
+.strip-footer {
+    background: rgba(0,0,0,0.9);
+    color: var(--gold-accent);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    border-top: 1px solid var(--gold-accent);
+}
+
+/* شبكة المضبوطات */
+.evidence-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.evidence-grid span {
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid var(--cyan-glow);
+    color: var(--cyan-glow);
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* تنسيق الفوتر لضمان التوسيط التام */
+.final-footer {
+    margin-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2); /* خط ذهبي هادي */
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* يوسط كل العناصر بداخله أفقياً */
+    text-align: center;
+    width: 100%;
+}
+
+.legal-notice {
+    color: #90a4ae;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.hashtag {
+    color: #00e5ff;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+    margin: 0 auto; /* ضمان إضافي للتوسيط */
+    display: block;
+       display: inline-block;
+    font-family: 'Traditional Arabic', serif; 
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 900;
+    color: #00d2ff; /* لون أزرق نيون */
+    text-decoration: none;
+    margin-top: 20px;
+    /* تأثير التوهج النيوني القوي */
+    text-shadow: 0 0 5px #f2ea07, 
+                 0 0 10px hsla(209, 97%, 48%, 0.522), 
+                 0 0 20px hsl(260, 87%, 47%), 
+                 0 0 40px rgba(0, 210, 255, 0.7);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+/* حركة نبض خفيفة للهاشتاج لزيادة التفاعل */
+.hashtag:hover {
+    transform: scale(1.1);
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 
+      0 0 20px hsl(244, 100%, 50%), 
+      0 0 40px hsl(221, 100%, 50%);
+    text-align: center;
+}
+
+/* التأكد من ثبات الكارد تماماً */
+.cyber-report-card {
+    transform: none !important; /* إلغاء أي دوران سابق */
+    transition: none !important;
+    background: rgba(11, 22, 36, 0.9); /* تقليل الشفافية قليلاً لزيادة الوضوح */
+    border: 1px solid #1e3a5f;
+}
+/* تأثير الاختفاء قبل الظهور */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+/* حالة الظهور */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* توهج النيون المتحرك للهاشتاج */
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px rgba(0, 229, 255, 0.4); }
+    50% { text-shadow: 0 0 30px rgba(0, 229, 255, 1), 0 0 50px rgba(0, 229, 255, 0.6); }
+    100% { text-shadow: 0 0 10px rgba(0, 229, 255, 0.4); }
+}
+
+.hashtag-animate {
+    animation: neonPulse 2s infinite;
+}
+/* تأثير الليزر اللي بيمسح الصفحة */
+.scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 10;
+    background: linear-gradient(0deg, rgba(0, 229, 255, 0) 0%, rgba(0, 229, 255, 0.2) 50%, rgba(0, 229, 255, 0) 100%);
+    opacity: 0.1;
+    position: fixed;
+    bottom: 100%;
+    pointer-events: none;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+}
+
+/* تأثير التوهج عند الوقوف بالماوس على أي عنصر */
+.cyber-report-card *:hover {
+    color: #fff;
+    text-shadow: 0 0 8px var(--cyan-glow);
+    transition: 0.3s;
+}
+
+/* فريم الصورة "المتطور" */
+.media-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.media-container::before {
+    content: "SCANNING...";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--cyan-glow);
+    font-size: 10px;
+    font-family: monospace;
+    z-index: 5;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+/* الحاوية اللي بتسمح بالبرواز المتحرك */
+.cyber-report-card {
+    position: relative;
+    background: #0b1624; /* لون خلفية الكارد */
+    overflow: hidden; /* عشان النور اللي بيلف ميخرجش بره */
+    border: none; /* هنستبدل البرواز القديم بالنور */
+}
+
+/* النور اللي بيلف */
+.cyber-report-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        transparent, 
+        transparent, 
+        transparent, 
+        #00e5ff /* لون النور السيان */
+    );
+    animation: rotate-border 4s linear infinite;
+}
+
+/* الطبقة اللي فوق النور عشان يبان كأنه برواز رفيع */
+.cyber-report-card::after {
+    content: '';
+    position: absolute;
+    inset: 4px; /* سمك البرواز */
+    background: #0b1624;
+    border-radius: 16px;
+    z-index: 0;
+}
+
+/* نضمن إن المحتوى فوق النور */
+.cyber-report-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+#particles-js {
+    position: fixed; /* يخلي الخلفية ثابتة ومغطية الشاشة مهما عملتي Scroll */
+    width: 100vw;    /* عرض الشاشة بالكامل */
+    height: 100vh;   /* طول الشاشة بالكامل */
+    top: 0;
+    left: 0;
+    z-index: -1;     /* عشان يفضل ورا الكارد وكل المحتوى */
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="icon" type="image/jpeg" href="00.jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نَبْضُ الدَّاخِلِيَّةِ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="depart.css">
+</head>
+<body>
+    <section class="main-hero">
+        <header class="navbar">
+            <div class="site-logo"><img src="1776688663891.png" alt="Logo"></div>
+            <nav class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="about.html">تاريخ الوزارة</a>
+                <a href="rules.html">قوانين الأمان</a>
+                 <a href="roles.html">أدوار هامة</a>
+                <a href="departments.html">قطاعات الوزارة</a>
+                <a href="emergency.html">أرقام الطوارئ</a>
+                <a href="important.html">توعية</a>
+                <a href="contact.html">اتصل بنا</a>
+            </nav>
+            <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
+        </header>
+	</section>
+        <div class="info-tables-container">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th colspan="2">👮 قطاع الأمن العام</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="icon-cell">🛡️</td>
+                <td>حفظ الأمن والنظام وتوفير بيئة آمنة للمواطنين في مختلف أنحاء الدولة.</td>
+            </tr>
+            <tr>
+                <td class="icon-cell">🚔</td>
+                <td>متابعة الحالة الأمنية في الشوارع والميادين وضبط المخالفات عبر الدوريات.</td>
+            </tr>
+            <tr>
+                <td class="icon-cell">⚖️</td>
+                <td>مكافحة الجرائم، تنفيذ الأحكام القضائية، وتعزيز سيادة القانون.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="styled-table">
+    <thead>
+        <tr>
+            <th colspan="2">🚓 قطاع الأمن المركزي</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="icon-cell">🚔</td>
+            <td>دعم قوات الشرطة في مواجهة أعمال الشغب والاضطرابات.</td>
+        </tr>
+        <tr>
+            <td class="icon-cell">🛡️</td>
+            <td>الحفاظ على النظام العام وتأمين المنشآت الحيوية في المواقف الصعبة.</td>
+        </tr>
+        <tr>
+            <td class="icon-cell">🏟️</td>
+            <td>تأمين المناسبات الكبرى والفعاليات المهمة لضمان سلامة المواطنين.</td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    
+</script>
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th colspan="2">🚒 قطاع الحماية المدنية (الإطفاء)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="icon-cell">🔥</td>
+            <td>حماية الأرواح والممتلكات من أخطار الحرائق والكوارث المختلفة.</td>
+        </tr>
+        <tr>
+            <td class="icon-cell">🆘</td>
+            <td>تقديم المساعدة الفورية والتدخل السريع في حالات الحوادث لتقليل الخسائر.</td>
+        </tr>
+        <tr>
+            <td class="icon-cell">🧗</td>
+            <td>القيام بعمليات الإنقاذ البري والنهري المتخصصة بكفاءة عالية.</td>
+        </tr>
+    </tbody>
+</table>
+
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th colspan="2">💊 مكافحة المخدرات والجريمة المنظمة</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="icon-cell">🚫</td>
+                <td>ملاحقة شبكات التهريب وضبط تجار ومتعاطي المواد المخدرة.</td>
+            </tr>
+            <tr>
+                <td class="icon-cell">🕵️</td>
+                <td>تنفيذ حملات أمنية للكشف عن الأوكار وحماية الشباب من أخطار الإدمان.</td>
+            </tr>
+            <tr>
+                <td class="icon-cell">📢</td>
+                <td>نشر الوعي بخطورة المخدرات وأهمية الابتعاد عنها عبر حملات التوعية.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- زر العودة للأعلى -->
+<div id="scrollToTop" class="back-to-top">
+    <img src="1776688663891.png" alt="Top">
+</div>
+<script src="index.js"></script>
+<script>
+  document.querySelectorAll('.styled-table thead').forEach(header => {
+    header.addEventListener('click', () => {
+        const table = header.parentElement;
+        
+        // غلق باقي الجداول إذا أردتِ فتح واحد فقط ببطء
+        document.querySelectorAll('.styled-table').forEach(t => {
+            if (t !== table) t.classList.remove('active');
+        });
+
+        // تشغيل حركة الفتح البطيئة
+        table.classList.toggle('active');
+    });
+});
+</script>
+	</body>
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-logo">🛡️ نبض الداخلية</div>
+        <p class="copyrighttext">
+            جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة 
+            <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span>
+        </p>
+        <div class="footer-line"></div>
+    </div>
+</footer>
+	</html>
