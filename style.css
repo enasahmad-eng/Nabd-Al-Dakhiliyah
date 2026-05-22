@@ -718,3 +718,175 @@ main {
         height: auto;
     }
 }
+@media screen and (max-width: 768px) {
+    
+/* ======================================================== */
+/* كود ضبط الـ Navbar للموبايل والشاشات الصغيرة (CSS فقط) */
+/* ======================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. إعادة ترتيب الهيدر بالكامل */
+    header.navbar {
+        display: flex !important;
+        flex-direction: column !important; /* ترتيب رأسي للعناصر الأساسية */
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 15px 10px !important;
+        gap: 15px !important;
+        height: auto !important; /* فتح الارتفاع عشان يشيل الأقسام */
+    }
+
+    /* 2. تجميع اللوجو والاسم فوق جنب بعض */
+    /* الكود ده هيجبر اللوجو والاسم يظهروا فوق، واللينكات تنزل تحتهم */
+    header.navbar .site-logo {
+        order: 1 !important;
+    }
+    
+    header.navbar .site-name {
+        order: 2 !important;
+        font-size: 1.4rem !important; /* حجم خط مناسب للموبايل */
+        text-align: center !important;
+    }
+
+    /* 3. تظبيط قائمة الأقسام (اللينكات) تحت اللوجو والاسم */
+    header.navbar .nav-links {
+        order: 3 !important; /* تنزل تحت اللوجو والاسم */
+        display: grid !important; /* تحويل الترتيب لشبكة منظم */
+        grid-template-columns: repeat(2, 1fr) !important; /* تقسيم الأقسام لعمودين جنب بعض */
+        gap: 10px !important; /* مسافة بين كل قسم والتاني */
+        width: 100% !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 4. تظبيط شكل زراير الأقسام الفردية عشان تليق بالتصميم */
+    header.navbar .nav-links a {
+        display: block !important;
+        text-align: center !important;
+        padding: 10px 5px !important;
+        font-size: 0.95rem !important; /* حجم خط مريح للقراءة وضمان عدم تداخل النصوص */
+        background-color: rgba(255, 255, 255, 0.03) !important; /* خلفية خفيفة جداً تبرز الزرار */
+        border: 1px solid rgba(255, 215, 0, 0.15) !important; /* إطار ذهبي خفيف جداً يتماشى مع الستايل */
+        border-radius: 6px !important;
+        transition: all 0.3s ease !important;
+        white-space: nowrap !important; /* يمنع الكلمة تنزل على سطرين جوة الزرار */
+    }
+
+    /* تأثير اللمس أو الضغط على الأقسام في الموبايل */
+    header.navbar .nav-links a:active,
+    header.navbar .nav-links a:hover {
+        background-color: rgba(255, 215, 0, 0.1) !important; /* توهج ذهبي خفيف عند الضغط */
+        border-color: #ffd700 !important; /* تفتيح الإطار الذهبي */
+        color: #ffd700 !important;
+    }
+
+    /* تظبيط حجم اللوجو في الموبايل عشان مياخدش مساحة ضخمة */
+    header.navbar .site-logo img {
+        height: 50px !important;
+        width: auto !important;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    /* الحاوية الكبيرة للفوتر اللي شايلا الأعمدة */
+    footer, .footer-container {
+        flex-direction: column !important; /* تحويل الأعمدة لصفوف */
+        text-align: center !important; /* تزيح الكلام كله في النص */
+        gap: 30px !important; /* مسافة مريحة بين كل سطر وسطر */
+        padding: 30px 20px !important;
+    }
+
+    /* لو مستخدم Grid للأعمدة في الفوتر */
+    .footer-grid {
+        grid-template-columns: 1fr !important; /* عمود واحد وبس */
+        text-align: center !important;
+    }
+
+    /* الجزء الخاص بحقوق الملكية (الفوتر السفلي المنفصل) */
+    .footer-bottom, .copyright {
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+        padding-top: 15px !important;
+    }
+}
+/* إخفاء زرار الموبايل تلقائياً على الشاشات الكبيرة */
+.menu-toggle-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle-btn .toggle-line {
+  height: 3px;
+  width: 100%;
+  background-color: #bf953f; /* تقدري تغيري اللون ده للون اللوجو أو الكتابة عندك */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ========================================== */
+/* شاشات الموبايل (التعديلات اللي هتتنفذ هنا فقط) */
+/* ========================================== */
+@media screen and (max-width: 768px) {
+  
+  /* إظهار زرار القائمة في الموبايل */
+  .menu-toggle-btn {
+    display: flex;
+  }
+
+  /* 
+     استبدلي (.nav-links) باسم الكلاس الفعلي 
+     بتاع قائمة الـ 8 أقسام عندك (مثلاً ul أو div)
+  */
+  .nav-links {
+    position: absolute;
+    top: 100%; /* هينزل تحت الهيدر بالظبط */
+    right: 0;
+    width: 100%;
+    background-color: #050a18; /* نفس لون خلفية الهيدر الحالي بتاعك */
+    flex-direction: column; /* تحويل الأقسام بشكل رأسي فوق بعض */
+    align-items: center;
+    gap: 0 !important; /* إلغاء المسافات الأفقية القديمة */
+    
+    /* إخفاء القائمة بشكل مبدئي بحركة ناعمة */
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  /* تنسيق عناصر القائمة جوه الموبايل */
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 12px 0;
+    width: 100%;
+  }
+
+  /* الكلاس اللي هيتضاف بالجافاسكريبت عشان يفتح القائمة */
+  .nav-links.open-menu {
+    max-height: 450px; /* مساحة كافية تظهر الـ 8 أقسام */
+  }
+
+  /* حركة تحول الزرار لعلامة X عند الفتح */
+  .menu-toggle-btn.active-btn .toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle-btn.active-btn .toggle-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle-btn.active-btn .toggle-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

@@ -73,3 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }, index * 150); // كل كارت يتأخر 150 ملي ثانية عن اللي قبله
     });
 });
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+// استبدلي .nav-links بالكلاس بتاع الأقسام عندك برضه
+const navLinksList = document.querySelector('.nav-links'); 
+
+mobileMenuBtn.addEventListener('click', () => {
+  // يفتح ويقفل القائمة
+  navLinksList.classList.toggle('open-menu');
+  // يغير شكل الزرار لـ X
+  mobileMenuBtn.classList.toggle('active-btn');
+});
