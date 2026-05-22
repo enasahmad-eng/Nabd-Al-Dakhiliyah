@@ -74,19 +74,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinksList = document.querySelector('.nav-links'); 
+// التعديل هنا: بنقوله هات الـ nav-links اللي جوه الـ navbar بتاع الهيدر بس!
+const navLinksList = document.querySelector('header.navbar .nav-links'); 
 
-mobileMenuBtn.addEventListener('click', () => {
-  // يفتح ويقفل قائمة الـ 8 أقسام
-  navLinksList.classList.toggle('open-menu');
-  // يحول شكل خطوط الزرار لعلامة X
-  mobileMenuBtn.classList.toggle('active-btn');
-});
-
-// اختياري: لو المستخدم داس على أي قسم، القائمة تقفل لوحدها
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinksList.classList.remove('open-menu');
-    mobileMenuBtn.classList.remove('active-btn');
+// شرط أمان عشان نضمن إن العناصر موجودة فعلياً في الصفحة قبل ما يشتغل
+if (mobileMenuBtn && navLinksList) {
+  mobileMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // بيمنع أي سلوك تلقائي غريب للمتصفح
+    
+    // يفتح ويقفل القائمة
+    navLinksList.classList.toggle('open-menu');
+    
+    // يغير شكل الزرار لـ X
+    mobileMenuBtn.classList.toggle('active-btn');
   });
-});
+}

@@ -14,3 +14,19 @@ window.onload = () => {
 
     cards.forEach(card => observer.observe(card));
 };
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+// التعديل هنا: بنقوله هات الـ nav-links اللي جوه الـ navbar بتاع الهيدر بس!
+const navLinksList = document.querySelector('header.navbar .nav-links'); 
+
+// شرط أمان عشان نضمن إن العناصر موجودة فعلياً في الصفحة قبل ما يشتغل
+if (mobileMenuBtn && navLinksList) {
+  mobileMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // بيمنع أي سلوك تلقائي غريب للمتصفح
+    
+    // يفتح ويقفل القائمة
+    navLinksList.classList.toggle('open-menu');
+    
+    // يغير شكل الزرار لـ X
+    mobileMenuBtn.classList.toggle('active-btn');
+  });
+}
