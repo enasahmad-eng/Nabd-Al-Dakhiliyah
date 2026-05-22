@@ -810,83 +810,45 @@ main {
         padding-top: 15px !important;
     }
 }
-/* إخفاء زرار الموبايل تلقائياً على الشاشات الكبيرة */
-.menu-toggle-btn {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
+/* هذا الجزء يضمن إلغاء أي مسافات تلقائية من المتصفح */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.menu-toggle-btn .toggle-line {
-  height: 3px;
-  width: 100%;
-  background-color: #bf953f; /* تقدري تغيري اللون ده للون اللوجو أو الكتابة عندك */
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-/* ========================================== */
-/* شاشات الموبايل (التعديلات اللي هتتنفذ هنا فقط) */
-/* ========================================== */
-@media screen and (max-width: 768px) {
-  
-  /* إظهار زرار القائمة في الموبايل */
-  .menu-toggle-btn {
+/* التنسيق الأساسي للـ Navbar */
+.navbar {
     display: flex;
-  }
-
-  /* 
-     استبدلي (.nav-links) باسم الكلاس الفعلي 
-     بتاع قائمة الـ 8 أقسام عندك (مثلاً ul أو div)
-  */
-  .nav-links {
-    position: absolute;
-    top: 100%; /* هينزل تحت الهيدر بالظبط */
-    right: 0;
-    width: 100%;
-    background-color: #050a18; /* نفس لون خلفية الهيدر الحالي بتاعك */
-    flex-direction: column; /* تحويل الأقسام بشكل رأسي فوق بعض */
+    justify-content: space-between; /* يضع اللوجو في طرف وزر القائمة في الطرف الآخر */
     align-items: center;
-    gap: 0 !important; /* إلغاء المسافات الأفقية القديمة */
-    
-    /* إخفاء القائمة بشكل مبدئي بحركة ناعمة */
-    max-height: 0; 
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  }
-
-  /* تنسيق عناصر القائمة جوه الموبايل */
-  .nav-links li {
+    padding: 15px 20px; /* مسافة أمان داخلية متناسقة من الأطراف */
+    background-color: #050a18; /* الخلفية النيفي الفخمة */
     width: 100%;
-    text-align: center;
-  }
+}
 
-  .nav-links a {
-    display: block;
-    padding: 12px 0;
-    width: 100%;
-  }
+/* تنسيق القائمة (الروابط) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* للتحكم في المسافة بين الروابط بدقة وبدون عشوائية */
+}
 
-  /* الكلاس اللي هيتضاف بالجافاسكريبت عشان يفتح القائمة */
-  .nav-links.open-menu {
-    max-height: 450px; /* مساحة كافية تظهر الـ 8 أقسام */
-  }
-
-  /* حركة تحول الزرار لعلامة X عند الفتح */
-  .menu-toggle-btn.active-btn .toggle-line:nth-child(2) {
-    opacity: 0;
-  }
-  .menu-toggle-btn.active-btn .toggle-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .menu-toggle-btn.active-btn .toggle-line:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
+/* شاشة الموبايل (Media Query) */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* مخفية في الموبايل حتى يضغط المستخدم على زر القائمة (البرجر منيو) */
+        
+        /* إذا كنتِ تريدينها أن تظهر كقائمة منسدلة تحت بعضها عند الفتح: */
+        /* display: flex; */
+        flex-direction: column; 
+        position: absolute;
+        top: 60px; /* نفس ارتفاع النوفبار تقريباً عشان ما تسبش فراغ */
+        left: 0;
+        width: 100%;
+        background-color: #050a18;
+        padding: 20px;
+        gap: 15px; /* مسافة عمودية متناسقة بين اللينكات */
+        text-align: center;
+    }
 }
