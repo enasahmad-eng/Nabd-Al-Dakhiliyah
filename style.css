@@ -852,3 +852,81 @@ main {
         text-align: center;
     }
 }
+/* إخفاء زرار الموبايل تماماً ومسحه من حسابات اللابتوب */
+.menu-toggle-btn {
+  display: none !important;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.menu-toggle-btn .toggle-line {
+  height: 3px;
+  width: 100%;
+  background-color: #bf953f; /* اللون الذهبي */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ========================================== */
+/* شاشات الموبايل (التأثير هنا فقط) */
+/* ========================================== */
+@media screen and (max-width: 768px) {
+  
+  /* إظهار الزرار في الموبايل فقط */
+  .menu-toggle-btn {
+    display: flex !important;
+  }
+
+  /* تحويل الـ nav لقائمة منسدلة ناعمة */
+  .navbar .nav-links {
+    display: flex !important;
+    position: absolute;
+    top: 100%; /* تفتح من تحت الهيدر مباشرة */
+    right: 0;
+    width: 100%;
+    background-color: #050a18; /* نفس كحلي موقعك */
+    flex-direction: column !important; /* ترتيب رأسي */
+    align-items: center;
+    gap: 0 !important;
+    padding: 0 !important;
+    
+    /* أنيميشن الفتح والغلق */
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+  }
+
+  /* تنسيق الروابط جوه الموبايل */
+  .navbar .nav-links a {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid rgba(191, 149, 63, 0.1);
+  }
+
+  /* كلاس الفتح بالجافاسكريبت */
+  .navbar .nav-links.open-menu {
+    max-height: 450px; /* مساحة كافية للأقسام */
+  }
+
+  /* حركة زرار الـ X */
+  .menu-toggle-btn.active-btn .toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle-btn.active-btn .toggle-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-toggle-btn.active-btn .toggle-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

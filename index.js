@@ -74,12 +74,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-// استبدلي .nav-links بالكلاس بتاع الأقسام عندك برضه
 const navLinksList = document.querySelector('.nav-links'); 
 
 mobileMenuBtn.addEventListener('click', () => {
-  // يفتح ويقفل القائمة
+  // يفتح ويقفل قائمة الـ 8 أقسام
   navLinksList.classList.toggle('open-menu');
-  // يغير شكل الزرار لـ X
+  // يحول شكل خطوط الزرار لعلامة X
   mobileMenuBtn.classList.toggle('active-btn');
+});
+
+// اختياري: لو المستخدم داس على أي قسم، القائمة تقفل لوحدها
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinksList.classList.remove('open-menu');
+    mobileMenuBtn.classList.remove('active-btn');
+  });
 });
