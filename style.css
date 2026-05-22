@@ -719,216 +719,141 @@ main {
     }
 }
 @media screen and (max-width: 768px) {
-    
 /* ======================================================== */
-/* كود ضبط الـ Navbar للموبايل والشاشات الصغيرة (CSS فقط) */
+/* 1. التنسيق الأساسي للموقع واللابتوب (Desktop)            */
 /* ======================================================== */
-@media screen and (max-width: 768px) {
-    
-    /* 1. إعادة ترتيب الهيدر بالكامل */
-    header.navbar {
-        display: flex !important;
-        flex-direction: column !important; /* ترتيب رأسي للعناصر الأساسية */
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 15px 10px !important;
-        gap: 15px !important;
-        height: auto !important; /* فتح الارتفاع عشان يشيل الأقسام */
-    }
-
-    /* 2. تجميع اللوجو والاسم فوق جنب بعض */
-    /* الكود ده هيجبر اللوجو والاسم يظهروا فوق، واللينكات تنزل تحتهم */
-    header.navbar .site-logo {
-        order: 1 !important;
-    }
-    
-    header.navbar .site-name {
-        order: 2 !important;
-        font-size: 1.4rem !important; /* حجم خط مناسب للموبايل */
-        text-align: center !important;
-    }
-
-    /* 3. تظبيط قائمة الأقسام (اللينكات) تحت اللوجو والاسم */
-    header.navbar .nav-links {
-        order: 3 !important; /* تنزل تحت اللوجو والاسم */
-        display: grid !important; /* تحويل الترتيب لشبكة منظم */
-        grid-template-columns: repeat(2, 1fr) !important; /* تقسيم الأقسام لعمودين جنب بعض */
-        gap: 10px !important; /* مسافة بين كل قسم والتاني */
-        width: 100% !important;
-        padding: 10px !important;
-        box-sizing: border-box !important;
-    }
-
-    /* 4. تظبيط شكل زراير الأقسام الفردية عشان تليق بالتصميم */
-    header.navbar .nav-links a {
-        display: block !important;
-        text-align: center !important;
-        padding: 10px 5px !important;
-        font-size: 0.95rem !important; /* حجم خط مريح للقراءة وضمان عدم تداخل النصوص */
-        background-color: rgba(255, 255, 255, 0.03) !important; /* خلفية خفيفة جداً تبرز الزرار */
-        border: 1px solid rgba(255, 215, 0, 0.15) !important; /* إطار ذهبي خفيف جداً يتماشى مع الستايل */
-        border-radius: 6px !important;
-        transition: all 0.3s ease !important;
-        white-space: nowrap !important; /* يمنع الكلمة تنزل على سطرين جوة الزرار */
-    }
-
-    /* تأثير اللمس أو الضغط على الأقسام في الموبايل */
-    header.navbar .nav-links a:active,
-    header.navbar .nav-links a:hover {
-        background-color: rgba(255, 215, 0, 0.1) !important; /* توهج ذهبي خفيف عند الضغط */
-        border-color: #ffd700 !important; /* تفتيح الإطار الذهبي */
-        color: #ffd700 !important;
-    }
-
-    /* تظبيط حجم اللوجو في الموبايل عشان مياخدش مساحة ضخمة */
-    header.navbar .site-logo img {
-        height: 50px !important;
-        width: auto !important;
-    }
-}
-@media screen and (max-width: 768px) {
-
-    /* الحاوية الكبيرة للفوتر اللي شايلا الأعمدة */
-    footer, .footer-container {
-        flex-direction: column !important; /* تحويل الأعمدة لصفوف */
-        text-align: center !important; /* تزيح الكلام كله في النص */
-        gap: 30px !important; /* مسافة مريحة بين كل سطر وسطر */
-        padding: 30px 20px !important;
-    }
-
-    /* لو مستخدم Grid للأعمدة في الفوتر */
-    .footer-grid {
-        grid-template-columns: 1fr !important; /* عمود واحد وبس */
-        text-align: center !important;
-    }
-
-    /* الجزء الخاص بحقوق الملكية (الفوتر السفلي المنفصل) */
-    .footer-bottom, .copyright {
-        flex-direction: column !important;
-        gap: 10px !important;
-        text-align: center !important;
-        padding-top: 15px !important;
-    }
-}
-/* هذا الجزء يضمن إلغاء أي مسافات تلقائية من المتصفح */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* التنسيق الأساسي للـ Navbar */
-.navbar {
+/* الهيدر الأساسي */
+header.navbar {
     display: flex;
-    justify-content: space-between; /* يضع اللوجو في طرف وزر القائمة في الطرف الآخر */
+    justify-content: space-between; /* يحافظ على توزيع الأطراف اللوجو والأقسام والاسم */
     align-items: center;
-    padding: 15px 20px; /* مسافة أمان داخلية متناسقة من الأطراف */
-    background-color: #050a18; /* الخلفية النيفي الفخمة */
+    padding: 15px 20px;
+    background-color: #050a18; /* الخلفية الكحلي الفخمة */
     width: 100%;
+    position: relative; /* مهم جداً عشان قائمة الموبايل تفتح مظبوط تحته */
 }
 
-/* تنسيق القائمة (الروابط) */
-.nav-links {
+/* القائمة والأقسام في الكمبيوتر */
+.navbar .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px; /* للتحكم في المسافة بين الروابط بدقة وبدون عشوائية */
+    gap: 20px; /* المسافة بين الروابط في اللابتوب */
 }
 
-/* شاشة الموبايل (Media Query) */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none; /* مخفية في الموبايل حتى يضغط المستخدم على زر القائمة (البرجر منيو) */
-        
-        /* إذا كنتِ تريدينها أن تظهر كقائمة منسدلة تحت بعضها عند الفتح: */
-        /* display: flex; */
-        flex-direction: column; 
-        position: absolute;
-        top: 60px; /* نفس ارتفاع النوفبار تقريباً عشان ما تسبش فراغ */
-        left: 0;
-        width: 100%;
-        background-color: #050a18;
-        padding: 20px;
-        gap: 15px; /* مسافة عمودية متناسقة بين اللينكات */
-        text-align: center;
-    }
-}
-/* ========================================== */
-/* إعدادات زرار الموبايل (مخفي تماماً على اللابتوب) */
-/* ========================================== */
+/* إخفاء زرار الموبايل تلقائياً على الشاشات الكبيرة */
 .menu-toggle-btn {
-  display: none !important;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  padding: 0;
+    display: none !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
 }
 
 .menu-toggle-btn .toggle-line {
-  height: 3px;
-  width: 100%;
-  background-color: #bf953f; /* اللون الذهبي */
-  border-radius: 2px;
-  transition: all 0.3s ease;
+    height: 3px;
+    width: 100%;
+    background-color: #bf953f; /* اللون الذهبي الراقي */
+    border-radius: 2px;
+    transition: all 0.3s ease;
 }
 
-/* ========================================== */
-/* شاشات الموبايل - بتشتغل فقط في الصفحة الرئيسية */
-/* ========================================== */
+
+/* ======================================================== */
+/* 2. كود الموبايل والشاشات الصغيرة (Media Query)          */
+/* ======================================================== */
 @media screen and (max-width: 768px) {
-  
-  /* إظهار زرار الموبايل في الصفحة الرئيسية فقط */
-  .main-hero .menu-toggle-btn {
-    display: flex !important;
-  }
-
-  /* تحويل الـ nav لقائمة منسدلة في الصفحة الرئيسية فقط */
-  .main-hero .navbar .nav-links {
-    display: flex !important;
-    position: absolute;
-    top: 100%; /* تفتح من تحت الهيدر مباشرة */
-    right: 0;
-    width: 100%;
-    background-color: #050a18; /* نفس كحلي موقعك */
-    flex-direction: column !important; /* ترتيب رأسي للأقسام */
-    align-items: center;
-    gap: 0 !important;
-    padding: 0 !important;
     
-    /* أنيميشن الفتح والغلق السلس */
-    max-height: 0; 
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.4);
-  }
+    /* إظهار زرار الـ 3 شروط في الموبايل */
+    .menu-toggle-btn {
+        display: flex !important;
+        
+    }
+@media screen and (max-width: 768px) {
+    header.navbar {
+        height: auto !important; /* بيخلي الهيدر يتمدد براحته */
+        overflow: visible !important; /* بيسمح للقائمة تخرج بره حدود الهيدر وتظهر للناس */
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    /* إجبار الهيدر يفتح ويظهر اللي جواه */
+    header.navbar {
+        height: auto !important;
+        overflow: visible !important; 
+    }
 
-  /* تنسيق الروابط جوه قائمة الموبايل في الصفحة الرئيسية */
-  .main-hero .navbar .nav-links a {
-    display: block !important;
-    width: 100%;
-    text-align: center;
-    padding: 15px 0 !important;
-    margin: 0 !important;
-    border-bottom: 1px solid rgba(191, 149, 63, 0.1);
-  }
+    .menu-toggle-btn {
+        display: flex !important;
+    }
 
-  /* كلاس الفتح بالجافاسكريبت */
-  .main-hero .navbar .nav-links.open-menu {
-    max-height: 450px; /* مساحة كافية للـ 8 أقسام */
-  }
+    header.navbar .nav-links {
+        display: flex !important;
+        position: absolute;
+        top: 100%; 
+        right: 0;
+        width: 100%;
+        background-color: #050a18; 
+        flex-direction: column !important; 
+        align-items: center;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 9999 !important; /* رفع الـ z-index عشان تظهر فوق أي عنصر تاني */
 
-  /* حركة زرار الـ X */
-  .main-hero .menu-toggle-btn.active-btn .toggle-line:nth-child(2) {
-    opacity: 0;
-  }
-  .main-hero .menu-toggle-btn.active-btn .toggle-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-  .main-hero .menu-toggle-btn.active-btn .toggle-line:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-  }
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+    }
+
+    header.navbar .nav-links a {
+        display: block !important;
+        text-align: center !important;
+        padding: 14px 0 !important; 
+        width: 100% !important;
+        font-size: 0.95rem !important;
+        background-color: rgba(255, 255, 255, 0.01) !important;
+        border-bottom: 1px solid rgba(191, 149, 63, 0.1) !important; 
+        margin: 0 !important;
+    }
+
+    /* زودنا المساحة جداً هنا لـ 800 بكسل عشان تستوعب الـ 8 أقسام بالكامل وزيادة */
+    header.navbar .nav-links.open-menu {
+        max-height: 800px !important; 
+    }
+}
+
+/* ======================================================== */
+/* 3. كود ضبط الفوتر للموبايل (Media Query)                 */
+/* ======================================================== */
+@media screen and (max-width: 768px) {
+    footer, .footer-container {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 30px !important;
+        padding: 30px 20px !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+
+    .footer-bottom, .copyright {
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+        padding-top: 15px !important;
+    }
 }

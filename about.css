@@ -439,3 +439,142 @@
     left: 0;
     z-index: -1;     /* عشان يفضل ورا الكارد وكل المحتوى */
 }
+@media screen and (max-width: 768px) {
+/* ======================================================== */
+/* 1. التنسيق الأساسي للموقع واللابتوب (Desktop)            */
+/* ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* الهيدر الأساسي */
+header.navbar {
+    display: flex;
+    justify-content: space-between; /* يحافظ على توزيع الأطراف اللوجو والأقسام والاسم */
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #050a18; /* الخلفية الكحلي الفخمة */
+    width: 100%;
+    position: relative; /* مهم جداً عشان قائمة الموبايل تفتح مظبوط تحته */
+}
+
+/* القائمة والأقسام في الكمبيوتر */
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* المسافة بين الروابط في اللابتوب */
+}
+
+/* إخفاء زرار الموبايل تلقائياً على الشاشات الكبيرة */
+.menu-toggle-btn {
+    display: none !important;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+}
+
+.menu-toggle-btn .toggle-line {
+    height: 3px;
+    width: 100%;
+    background-color: #bf953f; /* اللون الذهبي الراقي */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+
+/* ======================================================== */
+/* 2. كود الموبايل والشاشات الصغيرة (Media Query)          */
+/* ======================================================== */
+@media screen and (max-width: 768px) {
+    
+    /* إظهار زرار الـ 3 شروط في الموبايل */
+    .menu-toggle-btn {
+        display: flex !important;
+        
+    }
+@media screen and (max-width: 768px) {
+    header.navbar {
+        height: auto !important; /* بيخلي الهيدر يتمدد براحته */
+        overflow: visible !important; /* بيسمح للقائمة تخرج بره حدود الهيدر وتظهر للناس */
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    /* إجبار الهيدر يفتح ويظهر اللي جواه */
+    header.navbar {
+        height: auto !important;
+        overflow: visible !important; 
+    }
+
+    .menu-toggle-btn {
+        display: flex !important;
+    }
+
+    header.navbar .nav-links {
+        display: flex !important;
+        position: absolute;
+        top: 100%; 
+        right: 0;
+        width: 100%;
+        background-color: #050a18; 
+        flex-direction: column !important; 
+        align-items: center;
+        gap: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        z-index: 9999 !important; /* رفع الـ z-index عشان تظهر فوق أي عنصر تاني */
+
+        max-height: 0; 
+        overflow: hidden; 
+        transition: max-height 0.4s ease-in-out;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+    }
+
+    header.navbar .nav-links a {
+        display: block !important;
+        text-align: center !important;
+        padding: 14px 0 !important; 
+        width: 100% !important;
+        font-size: 0.95rem !important;
+        background-color: rgba(255, 255, 255, 0.01) !important;
+        border-bottom: 1px solid rgba(191, 149, 63, 0.1) !important; 
+        margin: 0 !important;
+    }
+
+    /* زودنا المساحة جداً هنا لـ 800 بكسل عشان تستوعب الـ 8 أقسام بالكامل وزيادة */
+    header.navbar .nav-links.open-menu {
+        max-height: 800px !important; 
+    }
+}
+
+/* ======================================================== */
+/* 3. كود ضبط الفوتر للموبايل (Media Query)                 */
+/* ======================================================== */
+@media screen and (max-width: 768px) {
+    footer, .footer-container {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 30px !important;
+        padding: 30px 20px !important;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+
+    .footer-bottom, .copyright {
+        flex-direction: column !important;
+        gap: 10px !important;
+        text-align: center !important;
+        padding-top: 15px !important;
+    }
+}
