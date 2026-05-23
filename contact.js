@@ -105,19 +105,21 @@ container.appendChild(glow);
 
     setInterval(createPulse, 2500); // دائرة كل ثانيتين ونصف
 });
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-// التعديل هنا: بنقوله هات الـ nav-links اللي جوه الـ navbar بتاع الهيدر بس!
+// التقطنا الزرار سواء كان مكتوب في الـ HTML كـ id أو class
+const mobileMenuBtn = document.querySelector('#mobileMenuBtn, .menu-toggle-btn');
 const navLinksList = document.querySelector('header.navbar .nav-links'); 
 
-// شرط أمان عشان نضمن إن العناصر موجودة فعلياً في الصفحة قبل ما يشتغل
 if (mobileMenuBtn && navLinksList) {
   mobileMenuBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // بيمنع أي سلوك تلقائي غريب للمتصفح
+    e.preventDefault(); 
     
-    // يفتح ويقفل القائمة
+    // يضيف أو يحذف الكلاس المسؤول عن الفتح
     navLinksList.classList.toggle('open-menu');
     
     // يغير شكل الزرار لـ X
     mobileMenuBtn.classList.toggle('active-btn');
+    
+    // سطر للتأكد في المتصفح أن الضغطة تعمل (يمكنكِ حذفه لاحقاً)
+    console.log("الموقع شغال والقائمة حالتها الآن: ", navLinksList.classList.contains('open-menu'));
   });
 }
