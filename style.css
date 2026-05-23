@@ -1,32 +1,55 @@
-/* تصفير الهوامش الشامل */
+/* 4. الفوتر: اطلعه فوق أي خلفية */
+.main-footer {
+    display: block !important;
+    background: #000 !important;
+    color: gold !important;
+    text-align: center;
+    padding: 50px 20px;
+    position: relative !important;
+    z-index: 9999;
+    border-top: 2px solid gold;
+    margin-top: 100px;
+}
+/* أهم جزء: الصفحة لازم تطول مع المواضيع */
+html, body {
+    height: auto !important; /* بيكسر أي قيد قديم */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto !important; /* بيشغل شريط التمرير غصب عنه */
+}
+html { scroll-behavior: smooth; }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* أهم جزء: الصفحة تزيد مع المحتوى */
-html, body {
-    height: auto !important;
-    min-height: 100vh;
+body {
     margin: 0;
     padding: 0;
-    overflow-y: auto !important;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     overflow-x: hidden;
+
+    /* 1. اللون الاحتياطي الأساسي */
     background-color: #050a18; 
+
+    /* 2. تدرج الألوان المتنقل (الشرطي والذهبي) */
     background-image: linear-gradient(125deg, #050a18, #0a1128, #1c315e, #8a6d3b, #050a18);
+    
+    /* 3. حجم الخلفية (أهم سطر عشان الألوان تتحرك) */
     background-size: 400% 400%;
+    
+    /* 4. تثبيت الخلفية أثناء السكرول */
     background-attachment: fixed;
+
+    /* 5. تشغيل الأنيميشن غصب عن المتصفح أونلاين */
     animation: policeGradient 15s ease infinite;
+    -webkit-animation: policeGradient 15s ease infinite;
+    -moz-animation: policeGradient 15s ease infinite;
 }
 
 @keyframes policeGradient {
@@ -35,25 +58,23 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* ================= الهيدر والنافبار (الكمبيوتر) ================= */
 .navbar {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 40px;
     background: rgba(5, 10, 24, 0.95);
     height: 90px;
-    position: fixed; /* متثبت في الشاشة */
+    position: relative; /* غيرناه من sticky لـ relative مؤقتاً للتجربة أو سيبيه بس اتأكدي من اللي جاي */
     top: 0;
-    left: 0;
     z-index: 1000;
     border-bottom: 2px solid #bf953f;
+    margin: 0 ; /* إضافة دي ضروري */
 }
 
 .site-logo img {
-    height: 65px;
-    width: 65px;
+    height: 65px ;
+    width: 65px ;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #bf953f;
@@ -69,237 +90,83 @@ body {
     filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
 }
 
+/* تنسيق الروابط وتأثير التوهج عند الماوس */
+/* تنسيق الروابط بلون أزرق متدرج أصلي */
 .nav-links a {
     text-decoration: none;
     margin: 0 15px;
     font-size: 18px;
     font-weight: bold;
     font-family: 'Segoe UI', sans-serif;
+    
+    /* التدرج الأزرق (من الأزرق الفاتح للأزرق الملكي) */
     background: linear-gradient(to bottom, #38bdf8, #1d4ed8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
     transition: all 0.4s ease;
     display: inline-block;
 }
 
-.nav-links a:hover, .nav-links a.active {
+/* التوهج الذهبي عند مرور الماوس (Hover) */
+.nav-links a:hover {
+    /* يقلب لتدرج ذهبي عند الماوس */
     background: linear-gradient(to bottom, #fcf6ba, #bf953f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    /* توهج النص الذهبي */
     filter: drop-shadow(0 0 8px rgba(191, 149, 63, 0.8));
-    text-shadow: 0 0 10px rgba(191, 149, 63, 0.9), 0 0 20px rgba(191, 149, 63, 0.6);
-    transform: translateY(-2px);
+    transform: translateY(-3px); /* حركة بسيطة تعطي حيوية */
 }
 
-/* ================= محتوى الصفحة والـ Hero ================= */
-.hero-container {
-    padding-top: 90px; /* مسافة أمان تحت الهيدر المثبت */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+/* التأثير السحري عند مرور الماوس */
+.nav-links a:hover {
+    color: #fcf6ba; /* اللون يقلب ذهبي فاتح */
+    
+    /* توهج النص باللون الذهبي */
+    text-shadow: 0 0 10px rgba(191, 149, 63, 0.9), 
+                 0 0 20px rgba(191, 149, 63, 0.6);
+                 
+    transform: translateY(-2px); /* حركة بسيطة لفوق بتدي شياكة */
 }
 
-.main-hero {
-    width: 100%;
-    margin-top: 90px !important; /* منعا للتداخل مع الهيدر المثبت */
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-image-wrapper {
-    position: relative;
-    width: 100%;
-    line-height: 0;
-}
-
-.hero-img-full {
-    width: 100%;
-    height: auto;
-    display: block;
-    z-index: 1;
-}
-
-.animated-glow-border {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border: 6px solid;
-    border-image: linear-gradient(90deg, #bf953f, #1c315e, #fcf6ba, #1c315e, #bf953f) 1;
-    z-index: 5;
-    pointer-events: none;
-    animation: rotateBorder 4s linear infinite;
-}
-
-@keyframes rotateBorder {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
-}
-
-.hero-center-box {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.hero-glow-frame {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border: 5px solid;
-    border-image: linear-gradient(90deg, #bf953f, #1c315e, #fcf6ba, #1c315e, #bf953f) 1;
-    z-index: 5;
-    pointer-events: none;
-    animation: rotateFrame 4s linear infinite;
-}
-
-@keyframes rotateFrame { to { filter: hue-rotate(360deg); } }
-
-.hero-content-wrapper {
-    position: absolute;
-    z-index: 100;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.gold-text-main {
-    font-family: 'Aref Ruqaa', serif !important;
-    font-size: 5rem;
-    margin: 0;
-    background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0px 0px 1px rgba(0,0,0,1)) drop-shadow(0px 0px 3px rgba(0,0,0,0.8)) drop-shadow(2px 4px 10px rgba(0,0,0,0.9));
-    line-height: 1.5;
-    display: block;
-}
-
-.blue-gold-sub {
-    font-family: 'Aref Ruqaa', serif !important;
-    font-size: 1.9rem;
-    margin: 0;
-    font-weight: bold;
-    background: linear-gradient(90deg, #bf953f, #3a7bd5, #fcf6ba, #3a7bd5, #bf953f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.5);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,1));
-}
-
-/* ================= الكروت والمحتوى الرئيسي ================= */
-main {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    width: 95%;
-    margin: 0 auto;
-}
-
+/* 2. الحاوية: السر هنا إننا هنلغي أي Height يدوي */
 .container {
-    display: block !important;
-    height: auto !important;
+    display: block !important; /* رجعيه بلوك عادي عشان يترتبوا تحت بعض */
+    height: auto !important; /* ممنوع منعاً باتاً تكتبى رقم بالـ px هنا */
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 100px 0; /* مسافة من فوق وتحت */
 }
-
+/* 3. البطاقة: خليها تتنفس وتكبر حسب الكلام اللي جواها */
 .card {
-    background: #0b1624;
-    border-radius: 12px;
-    border: 1px solid rgba(191, 149, 63, 0.3);
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    height: 100%;
+    height: auto !important; /* بتكبر مع الكلام */
+    min-height: 150px; 
+    margin-bottom: 60px !important; /* المسافة اللي طلبتيها بين المواضيع */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid gold;
+    overflow: hidden; /* عشان الصورة متبوظش الشكل */
     display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.card:hover {
-    transform: translateY(-10px) scale(1.02) !important;
-    box-shadow: 0 20px 40px rgba(197, 160, 89, 0.4) !important;
-    border-color: #ffd700 !important;
-}
-
-.card-image { position: relative; }
-.card-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    background-color: #050a12;
-    border-bottom: 2px solid #d4af37;
-}
-
-.card-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 25px;
-    color: #bf953f;
-    font-weight: bold;
+    margin: 20px auto ;
+    max-width: 800px ; 
+    flex-direction: row ;
     text-align: center;
 }
 
-/* ================= تأثيرات الجزيئات والزرار العلوي ================= */
-#particles-js {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;
-}
-
-.back-to-top img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.back-to-top:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9);
-}
-
-/* ================= الفوتر ================= */
+/* تنسيق الـ Footer */
 .main-footer {
     background: linear-gradient(to top, rgba(5, 10, 24, 1), rgba(5, 10, 24, 0.8));
     padding: 40px 20px 20px;
     text-align: center;
     direction: rtl;
-    border-top: 2px solid #bf953f;
-    margin-top: 100px;
-    position: relative;
-    z-index: 10;
+    border-top: 1px solid rgba(191, 149, 63, 0.3); /* خط ذهبي نحيف من فوق */
+    margin-top: 50px;
 }
 
+/* شعار الفريق في الـ Footer */
 .footer-logo {
     font-family: 'Aref Ruqaa', serif;
     font-size: 24px;
@@ -308,12 +175,15 @@ main {
     margin-bottom: 15px;
 }
 
+/* نص الحقوق */
 .copyrighttext {
     color: #cbd5e1;
     font-size: 15px;
+    letter-spacing: 0.5px;
     opacity: 0.8;
 }
 
+/* اسم الفريق المتوهج */
 .team-name {
     color: #bf953f;
     font-weight: bold;
@@ -329,61 +199,566 @@ main {
     transform: scale(1.1);
 }
 
-/* ================= الشاشات الصغيرة والموبايل ================= */
+/* الخط المزخرف السفلي */
+.footer-line {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #bf953f, transparent);
+    margin: 20px auto 0;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px 15px rgba(191, 149, 63, 0.6);
+    z-index: 10;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 25px;
+    text-align: center;
+    flex: 1 ;
+    color: #bf953f;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: 0.3s;
+     transform: scale(1.05);
+    text-shadow: 0 0 50px 15px rgba(191, 149, 63, 0.6);
+    z-index: 10;
+}
+/* 2. تأكد إن الـ particles مش مغطية على الكلام أو "قاصة" الصفحة */
+#particles-js {
+    position: fixed; /* ثابت في الخلفية */
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* يخليه ورا كل حاجة */
+    top: 0;
+    left: 0;
+}
+
+/* تعديل بسيط على محتوى الموقع */
+.main-content {
+    position: relative;
+    z-index: 2; /* أعلى من طبقة التفاعل */
+}
+
+/* تعديل الـ Body لضمان ثبات الخلفية */
+body {
+    margin: 0;
+    padding: 0;
+    /* كودك الأصلي كما هو */
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    color: white;
+    background: linear-gradient(125deg, #050a18, #0a1128, #1c315e, #8a6d3b, #050a18);
+    background-size: 400% 400%;
+    animation: policeGradient 15s ease infinite;
+    min-height: 100vh;
+    background-attachment: fixed; /* إضافة دي عشان الخلفية متتحركش مع الاسكرول */
+}
+/* إلغاء أي هوامش للمتصفح في الأعلى */
+/* تصفير شامل */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* حاوية القسم بالكامل لضمان الالتصاق بالسقف */
+.main-hero {
+    width: 100%;
+    margin-top: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    line-height: 0; /* لمسح أي بكسل وهمي تحت الصورة */
+}
+
+.hero-img-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 1; /* الطبقة الأولى */
+}
+
+/* التحديدة المتحركة حوالين الصورة */
+.animated-glow-border {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 6px solid;
+    border-image: linear-gradient(90deg, #bf953f, #1c315e, #fcf6ba, #1c315e, #bf953f) 1;
+    z-index: 5; /* فوق الصورة */
+    pointer-events: none;
+    animation: rotateBorder 4s linear infinite;
+}
+
+@keyframes rotateBorder {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+/* العلبة الكبيرة */
+.hero-center-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* البرواز المتحرك */
+.hero-glow-frame {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border: 5px solid;
+    border-image: linear-gradient(90deg, #bf953f, #1c315e, #fcf6ba, #1c315e, #bf953f) 1;
+    z-index: 5;
+    pointer-events: none;
+    animation: rotateFrame 4s linear infinite;
+}
+
+@keyframes rotateFrame {
+    to { filter: hue-rotate(360deg); }
+}
+
+/* علبة النصوص - السنترة بالمللي */
+.hero-content-wrapper {
+    position: absolute;
+    z-index: 100;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* مسافة بسيطة بين الجملتين */
+}
+
+/* نبض الداخلية - ذهبي ناعم وواضح */
+.gold-text-main {
+    font-family: 'Aref Ruqaa', serif !important;
+    font-size: 5rem;
+    margin: 0;
+    background: linear-gradient(to bottom, #fcf6ba 0%, #bf953f 22%, #fbf5b7 45%, #aa771c 50%, #fcf6ba 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* بديل الـ Stroke عشان ميبوظش الحروف: ظلال متعددة وكثيفة */
+    filter: drop-shadow(0px 0px 1px rgba(0,0,0,1)) 
+            drop-shadow(0px 0px 3px rgba(0,0,0,0.8))
+            drop-shadow(2px 4px 10px rgba(0,0,0,0.9));
+            
+    line-height: 1.5;
+    display: block;
+}
+
+.blue-gold-sub {
+    font-family: 'Aref Ruqaa', serif !important;
+    font-size: 1.9rem;
+    margin: 0;
+    font-weight: bold;
+    /* زخرفة أزرق في ذهبي */
+    background: linear-gradient(90deg, #bf953f, #3a7bd5, #fcf6ba, #3a7bd5, #bf953f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* تحديدة خفيفة لضمان وضوح النص الصغير */
+    -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,1));
+}
+/* إظهار الـ Navbar وتثبيتها */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(5, 10, 24, 0.95);
+    border-bottom: 1px solid #bf953f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}/* ضبط أساسيات الصفحة لمنع أي تداخل */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #050a18; /* لون الكحلي الرسمي */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* 1. تثبيت الـ Navbar في الأعلى */
+.main-header {
+    width: 100%;
+    height: 80px;
+    background: rgba(5, 10, 24, 0.95);
+    border-bottom: 1px solid #bf953f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed; /* ثابت لا يختفي */
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links a {
+    color: #5383d3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #fcf6ba;
+}
+
+/* 2. منطقة الفورم والخلفية المتفاعلة */
+.hero-container {
+    padding-top: 80px; /* مساحة تحت النافبار */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* دوائر النبض في الخلفية */
+.pulse-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.ring {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(191, 149, 63, 0.2);
+    border-radius: 50%;
+    animation: pulse-animation 4s linear infinite;
+}
+
+.ring:nth-child(2) { animation-delay: 2s; }
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3.5); opacity: 0; }
+}
+
+/* 3. المربع المتوهج (Glow Effect) */
+.contact-form-card {
+    position: relative;
+    z-index: 10;
+    background: rgba(10, 20, 40, 0.9);
+    border: 1.5px solid #bf953f;
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 450px;
+    /* التوهج الذهبي المطلوب */
+    box-shadow: 0 0 30px rgba(191, 149, 63, 0.4), 
+                0 0 15px rgba(191, 149, 63, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.contact-form-card h2 {
+    font-family: 'Aref Ruqaa', serif;
+    color: #fcf6ba;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+/* ضبط الخانات لمنع "اللخبطة" */
+.input-wrapper {
+    margin-bottom: 15px;
+}
+
+.input-wrapper input, .input-wrapper textarea {
+    width: 100%;
+    padding: 12px;
+    background: #050a18;
+    border: 1px solid rgba(191, 149, 63, 0.3);
+    border-radius: 8px;
+    color: white;
+    text-align: right;
+    outline: none;
+    box-sizing: border-box; /* السطر المنقذ */
+}
+
+/* زرار الإرسال الذهبي */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #bf953f, #fcf6ba, #bf953f);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(191, 149, 63, 0.3);
+}
+.card:first-of-type {
+    margin-top: 60px !important; /* المسافة اللي هتبعد أول كارد عن الصورة */
+}
+main {
+    margin-top: 60px; /* دي المسافة اللي إنتي معلما عليها بالأصفر */
+    display: grid; /* لضمان إن الكروت تترص صح */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 5%; /* هوامش داخلية جانبية */
+    max-width: 1400px; /* لضمان عدم تمدد المحتوى بشكل مبالغ فيه */
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px; /* بتعمل مسافة من الداخل فوق أول كارت */
+}
+
+.card {
+    width: 100%; /* خليه ياخد مساحة الخانة اللي الجريد حددها له */
+    display: flex;
+    flex-direction: column;
+    background: #0b1624;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%; /* عشان كل الكروت في نفس الصف تبقى طول واحد */
+}
+.cards-container {
+    /* المسافة اللي إنتي محتاجاها */
+    margin-top: 80px; /* تقدري تزودي أو تقللي الرقم ده حسب ذوقك */
+    
+    /* عشان الكروت تترص جنب بعض مش تحت بعض */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0 5%;
+    width: 100%;
+}
+.card-image img {
+    width: 100%;
+    height: auto; /* بدل 200px */
+    background: transparent; /* نشيل أي خلفية سودة */
+    display: block; /* يمنع وجود أي فجوات تحت الصورة */
+    object-fit: initial; /* نلغي أي تحكم في المقاس */
+    background-color: #050a12; /* لون غامق يملأ الفراغات لو الصورة مقاسها مختلف */
+    border-bottom: 2px solid #d4af37;
+}
+
+.card-content {
+    flex-grow: 1; /* دي بتجبر الكارد إنه يملأ الطول حتى لو الكلام قليل */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+/* 2. الحركة التفاعلية لما الماوس ييجي على الكارت */
+.card:hover {
+    transform: translateY(-10px) scale(1.02) !important; /* الكارت يترفع لفوق ويكبر سنة */
+    box-shadow: 0 20px 40px rgba(197, 160, 89, 0.4) !important; /* وهج ذهبي تحت الكارت */
+    border-color: #ffd700 !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+/* 3. حركة للصورة جوه الكارت */
+.card:hover .main-img {
+    transform: scale(2.5) rotate(2deg); /* الصورة تعمل زووم خفيف وتلف سنة */
+    transition: transform 0.4s ease;
+}
+
+/* 4. حركة للرقم */
+.card:hover .decorated-num {
+    text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700 !important; /* الرقم ينور أكتر */
+    transition: all 0.3s ease;
+}
+.back-to-top {
+    position: fixed; /* يخليها ثابتة في مكانها حتى لو حركتي الصفحة */
+    bottom: 20px;    /* المسافة من تحت */
+    right: 20px;     /* المسافة من اليمين */
+    width: 60px;     /* عرض الدائرة */
+    height: 60px;    /* طول الدائرة */
+    border-radius: 50%; /* عشان تكون دائرية تماماً */
+    overflow: hidden;   /* عشان الصورة ما تطلعش بره الدائرة */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* تأثير وهج خفيف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;   /* عشان تكون فوق كل عناصر الصفحة */
+}
+
+.back-to-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* يخلي الصورة تملأ الدائرة من غير ما تتمط */
+}
+
+/* تأثير عند تمرير الماوس فوقها */
+.back-to-top:hover {
+    transform: scale(1.1); /* تكبر شوية */
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9); /* يزيد الوهج */
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    background-color: transparent; /* غيرنا اللون هنا ليكون شفافاً */
+    pointer-events: none; /* عشان ما يمنعش الضغط على الزراير */
+}
+#particles-js {
+    position: fixed; /* يخلي الخلفية ثابتة ومغطية الشاشة مهما عملتي Scroll */
+    width: 100vw;    /* عرض الشاشة بالكامل */
+    height: 100vh;   /* طول الشاشة بالكامل */
+    top: 0;
+    left: 0;
+    z-index: -1;     /* عشان يفضل ورا الكارد وكل المحتوى */
+}
+.card-image {
+    position: relative;
+}
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--cyan-glow, #00e5ff);
+    box-shadow: 0 0 15px #00e5ff;
+    z-index: 5;
+    opacity: 0;
+}
+
+.card:hover .card-image::after {
+    animation: scanLine 2s linear infinite;
+    opacity: 1;
+}
+
+@keyframes scanLine {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* إجبار المتصفح على عمل 3 أعمدة في الصف */
+    gap: 20px;
+    padding: 20px;
+    width: 95%; /* عشان يملأ الشاشة يمين وشمال */
+    margin: 0 auto;
+}
+
+/* للموبايل: نخليهم كارد واحد تحت التاني */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+/* الأكواد دي هتشتغل على الموبايل بس */
 @media screen and (max-width: 768px) {
     
-    /* ضبط أبعاد الهيدر عشان يستوعب القائمة المنسدلة */
-    .navbar {
-        height: auto !important;
-        overflow: visible !important;
-        position: fixed !important; /* يفضل ثابت حتى بالموبايل */
-        top: 0 !important;
-        padding: 15px 20px !important;
+    /* 1. تظبيط الحاوية الرئيسية (Container) */
+    .container, body {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
     }
 
-    /* الـ 8 أقسام: إعادة هيكلة شاملة وفرد رأسي */
-    .navbar .nav-links {
-        display: none; /* مخفي طبيعي ويظهر بالجافاسكريبت */
+    /* 2. تظبيط حجم الخطوط (العناوين الكبيرة بتبوظ في الموبايل) */
+    h1 {
+        font-size: 1.8rem !important; /* أو بالبكسل زي 28px */
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    p, span, a {
+        font-size: 0.95rem !important; /* حجم مريح للعين على الشاشات الصغيرة */
+    }
+
+    /* 3. تظبيط الكروت أو العناصر اللي جنب بعض */
+    /* لو عامل عناصر بجانب بعض (Flex) خليهم ينزلوا تحت بعض */
+    .flex-container {
+        flex-direction: column !important;
+    }
+
+    /* لو مستخدم Grid خليه يعرض عمود واحد بس بدل 3 أو 4 */
+    .grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+
+    /* 4. تظبيط الصور والفيديوهات عشان متخرجش برة الشاشة */
+    img, video {
+        max-width: 100%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 768px) {
+
+    /* تحرير أبعاد الهيدر عشان يستوعب القائمة الطايرة */
+    header.navbar {
+        height: auto !important;
+        overflow: visible !important;
+        position: relative !important;
+    }
+
+    /* الحالة الطبيعية: القائمة مخفية تماماً (شيلنا الـ important من الـ display هنا عشان ما تعندش) */
+    header.navbar .nav-links {
+        display: none; 
         position: absolute !important;
-        top: 100% !important; /* يبدأ من تحت برواز النافبار علطول */
+        top: 100% !important; 
         right: 0 !important;
         width: 100% !important;
-        background-color: #050a18 !important;
-        flex-direction: column !important;
+        background-color: #050a18 !important; 
+        flex-direction: column !important; /* ترتيب رأسي مظبوط */
         align-items: center !important;
-        padding: 15px 0 !important;
-        z-index: 99999 !important;
-        box-shadow: 0 15px 25px rgba(0,0,0,0.6) !important;
+        gap: 0 !important;
+        padding: 10px 0 !important;
+        z-index: 99999 !important; /* تطلع فوق كل محتوى الصفحة */
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5) !important;
     }
 
-    /* كلاس السحر: الفتح بالجافا سكريبت */
-    .navbar .nav-links.open-menu {
-        display: flex !important;
-        height: auto !important;
-        max-height: none !important; /* يكسر أي سقف محدد للارتفاع */
-        overflow: visible !important;
+    /* الحالة السحرية: تظهر القائمة فوراً بكامل روابطها الـ 8 تحت بعض */
+    header.navbar .nav-links.open-menu {
+        display: flex !important; /* إجبار على الظهور الفوري كـ Flex */
+        height: auto !important; /* تتمدد براحتها على مقاس الـ 8 أقسام */
+        max-height: none !important; 
+        overflow: visible !important; 
     }
 
-    /* الروابط جوه الموبايل تفرش بالعرض */
-    .navbar .nav-links a {
+    /* الروابط بداخلها */
+    header.navbar .nav-links a {
         display: block !important;
-        width: 100% !important;
         text-align: center !important;
-        padding: 15px 0 !important;
-        margin: 0 !important;
-        font-size: 1.1rem !important;
+        padding: 15px 0 !important; 
+        width: 100% !important;
         color: #ffffff !important;
-        border-bottom: 1px solid rgba(191, 149, 63, 0.15) !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid rgba(191, 149, 63, 0.15) !important; 
     }
-
-    /* الكروت تنزل تحت بعض عمود واحد */
-    main {
-        grid-template-columns: 1fr !important;
-        margin-top: 110px; /* تفادي الهيدر المفتوح */
-        padding: 15px;
-    }
-
-    h1 { font-size: 1.8rem !important; }
-    h2 { font-size: 1.5rem !important; }
-    p, span, a { font-size: 0.95rem !important; }
 }
