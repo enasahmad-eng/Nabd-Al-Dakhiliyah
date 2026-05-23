@@ -24,10 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ==========================================
-    // 2. كود القائمة المنسدلة (الـ 8 أقسام) - محمي ومحدد
+    // 2. كود القائمة المنسدلة (الـ 8 أقسام) - تم تصليحه وتأمينه
     // ==========================================
     const mobileMenuBtn = document.querySelector('#mobileMenuBtn, .menu-toggle-btn');
-    const navLinksList = document.querySelector('header.navbar .nav-links'); 
+    const navLinksList = document.querySelector('.navbar .nav-links'); // تم تعديل الاستهداف ليطابق الـ CSS الجديد
+    const mainHeaderElement = document.querySelector('.navbar'); // صلحنا الغلطة هنا وعرفنا الهيدر صح
 
     if (mobileMenuBtn && navLinksList) {
         mobileMenuBtn.addEventListener('click', (e) => {
@@ -42,7 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // حركة ذكية: لو ضغطت في أي مكان فاضي في الشاشة والقائمة مفتوحة.. تقفل تلقائي
         document.addEventListener('click', (e) => {
-            if (!header.contains(e.target) && navLinksList.classList.contains('open-menu')) {
+            // صلحنا الـ header وخليناها تنده على العنصر الصح عشان الـ Error يختفي
+            if (mainHeaderElement && !mainHeaderElement.contains(e.target) && navLinksList.classList.contains('open-menu')) {
                 navLinksList.classList.remove('open-menu');
                 mobileMenuBtn.classList.remove('active-btn');
             }
@@ -74,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==========================================
 // 4. كود النقط والخلفية التفاعلية (Particles)
 // ==========================================
-// سيبناه بره لأنه مكتبة خارجية وبتحتاج تشتعل أول ما الملف يقرا الـ ID فوراً
 if (document.getElementById("particles-js")) {
     particlesJS("particles-js", {
       "particles": {
