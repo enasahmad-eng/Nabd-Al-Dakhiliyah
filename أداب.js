@@ -1,10 +1,10 @@
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 100, // عدد النقط اللي بتلعب في الجوانب
+      "value": 100,
       "density": { "enable": true, "value_area": 800 }
     },
-    "color": { "value": "#00d2ff" }, // لون النقط (أزرق نيون)
+    "color": { "value": "#00d2ff" },
     "shape": { "type": "circle" },
     "opacity": {
       "value": 0.5,
@@ -17,7 +17,7 @@ particlesJS("particles-js", {
       "anim": { "enable": false }
     },
     "line_linked": {
-      "enable": true, // الخطوط اللي بتوصل النقط ببعضها
+      "enable": true,
       "distance": 150,
       "color": "#00d2ff",
       "opacity": 0.4,
@@ -25,36 +25,20 @@ particlesJS("particles-js", {
     },
     "move": {
       "enable": true,
-      "speed": 3, // سرعة الحركة
+      "speed": 3,
       "direction": "none",
       "random": false,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
+      "bounce": false
     }
   },
   "interactivity": {
     "detect_on": "canvas",
     "events": {
-      "onhover": { "enable": true, "mode": "grab" }, // لما الماوس يقرب الخطوط بتتشد ناحيته
+      "onhover": { "enable": true, "mode": "grab" },
       "onclick": { "enable": true, "mode": "push" }
     }
   },
   "retina_detect": true
 });
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-// التعديل هنا: بنقوله هات الـ nav-links اللي جوه الـ navbar بتاع الهيدر بس!
-const navLinksList = document.querySelector('header.navbar .nav-links'); 
-
-// شرط أمان عشان نضمن إن العناصر موجودة فعلياً في الصفحة قبل ما يشتغل
-if (mobileMenuBtn && navLinksList) {
-  mobileMenuBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // بيمنع أي سلوك تلقائي غريب للمتصفح
-    
-    // يفتح ويقفل القائمة
-    navLinksList.classList.toggle('open-menu');
-    
-    // يغير شكل الزرار لـ X
-    mobileMenuBtn.classList.toggle('active-btn');
-  });
-}
