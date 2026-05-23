@@ -10,185 +10,150 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
+
+    <!-- ✅ الهيدر خارج الـ section تماماً -->
+    <header class="navbar">
+        <div class="site-logo">
+            <img src="1776688663891.png" alt="Logo">
+        </div>
+        <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
+        <nav class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">تاريخ الوزارة</a>
+            <a href="rules.html">قوانين الأمان</a>
+            <a href="roles.html">أدوار هامة</a>
+            <a href="departments.html">قطاعات الوزارة</a>
+            <a href="emergency.html">أرقام الطوارئ</a>
+            <a href="important.html">توعية</a>
+            <a href="contact.html">اتصل بنا</a>
+        </nav>
+        <button class="menu-toggle-btn" id="mobileMenuBtn">
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+        </button>
+    </header>
+
+    <!-- ✅ الـ section بدأت بعد الهيدر -->
     <section class="main-hero">
-<header class="navbar">
-    <!-- 1. اللوجو على الطرف -->
-    <div class="site-logo">
-        <img src="1776688663891.png" alt="Logo">
-    </div>
-
-    <!-- 2. اسم الموقع الفخم -->
-    <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
-
-    <!-- 3. قائمة الـ 8 أقسام كاملة ومقروءة -->
-    <nav class="nav-links">
-        <a href="index.html">الرئيسية</a>
-        <a href="about.html">تاريخ الوزارة</a>
-        <a href="rules.html">قوانين الأمان</a>
-        <a href="roles.html">أدوار هامة</a>
-        <a href="departments.html">قطاعات الوزارة</a>
-        <a href="emergency.html">أرقام الطوارئ</a>
-        <a href="important.html">توعية</a>
-        <a href="contact.html">اتصل بنا</a>
-    </nav>
-
-    <!-- 4. زرار الموبايل الصحيح بـ 3 شرط فقط -->
-    <button class="menu-toggle-btn" id="mobileMenuBtn">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </button>
-</header>
-        </header>
-       <div class="history-section">
-    <div class="decorative-box police-glow"> <h2 class="main-glow-title">🏛️ نبذة تاريخية عن وزارة الداخلية</h2>
-        
-        <div class="content-wrapper">
-            <p class="highlight-text">
-                تعد وزارة الداخلية من أقدم وأهم مؤسسات الدولة، حيث تم إنشاؤها بهدف حفظ الأمن والنظام داخل البلاد، وحماية المواطنين وممتلكاتهم.
-            </p>
-
-            <div class="history-card">
-                <h3>📜 التأسيس والجذور</h3>
-                <p>تأسست وزارة الداخلية في مصر في عهد <strong>محمد علي باشا</strong> في القرن التاسع عشر، حيث عمل على إنشاء جهاز منظم للشرطة لتحقيق الأمن والاستقرار. ومنذ ذلك الحين، شهدت الوزارة تطورًا كبيرًا في مهامها وتنظيمها.</p>
-            </div>
-
-            <div class="special-event">
-                <div class="event-icon">🎖️</div>
-                <div class="event-text">
-                    <h4>عيد الشرطة - 25 يناير</h4>
-                    <p>يخلد ذكرى صمود رجال الشرطة في الإسماعيلية عام 1952 دفاعاً عن كرامة الوطن، وهو أحد أبرز المحطات التاريخية في مسيرة الوزارة.</p>
-                </div>
-            </div>
-<div class="moi-historical-timeline-root">
-    <!-- الخط العمودي المركزي النيوني -->
-    <div class="moi-historical-timeline-line"></div>
-
-    <div class="moi-historical-items-container">
-        <!-- بطاقة الإنجاز التقني (يسار) -->
-        <div class="moi-tl-card-item tl-left-card js-tl-item">
-            <div class="tl-node-dot"></div> <!-- النقطة -->
-            <div class="tl-neon-inner-card">
-                <div class="icon">🔍</div>
-                <h3 class="golden-text">أنظمة الذكاء الاصطناعي</h3>
-                <p>تطوير أنظمة ذكية لمكافحة الجريمة وتأمين المنافذ بأحدث التقنيات العالمية.<span class="golden-text"></span></p>
-            </div>
-        </div>
-
-        <!-- بطاقة الخدمات الرقمية (يمين) -->
-        <div class="moi-tl-card-item tl-right-card js-tl-item">
-            <div class="tl-node-dot"></div> <!-- النقطة -->
-            <div class="tl-neon-inner-card">
-                <div class="tl-counter-box">
-                    <span class="tl-counter-plus">+</span>
-                    <span class="tl-counter-num js-moi-counter" data-moi-val="500">0</span>
-                </div>
-                <h3 class="golden-text">خدمة إلكترونية</h3>
-                <p>تحويل معظم الخدمات الجماهيرية إلى خدمات رقمية سهلة الوصول.</p>
-            </div>
-        </div>
-    </div>
-</div>
-</div><script>
-// جافا سكريبت منعزل تماماً
-    (function() {
-        // 1. كود العداد الرقمي النيوني
-        function initCounters() {
-            let counters = document.querySelectorAll(".js-moi-counter");
-            let intervalDuration = 3000; // وقت العداد كلياً (3 ثواني)
-
-            counters.forEach((counter) => {
-                let startValue = 0;
-                let endValue = parseInt(counter.getAttribute("data-moi-val"));
+        <div class="history-section">
+            <div class="decorative-box police-glow">
+                <h2 class="main-glow-title">🏛️ نبذة تاريخية عن وزارة الداخلية</h2>
                 
-                // حساب الخطوة الزمنية بناءً على القيمة النهائية
-                let step = Math.ceil(endValue / (intervalDuration / 30)); // تعديل السرعة
-                let duration = 30; // تحديث كل 30ms للحركة النبضية
+                <div class="content-wrapper">
+                    <p class="highlight-text">
+                        تعد وزارة الداخلية من أقدم وأهم مؤسسات الدولة، حيث تم إنشاؤها بهدف حفظ الأمن والنظام داخل البلاد، وحماية المواطنين وممتلكاتهم.
+                    </p>
 
-                let counterId = setInterval(function () {
-                    startValue += step; 
-                    if (startValue >= endValue) {
-                        counter.textContent = endValue;
-                        clearInterval(counterId);
-                    } else {
-                        counter.textContent = startValue;
-                    }
-                }, duration);
-            });
-        }
+                    <div class="history-card">
+                        <h3>📜 التأسيس والجذور</h3>
+                        <p>تأسست وزارة الداخلية في مصر في عهد <strong>محمد علي باشا</strong> في القرن التاسع عشر، حيث عمل على إنشاء جهاز منظم للشرطة لتحقيق الأمن والاستقرار. ومنذ ذلك الحين، شهدت الوزارة تطورًا كبيرًا في مهامها وتنظيمها.</p>
+                    </div>
 
-        // 2. كود الظهور عند التمرير (Reveal)
-        function initScrollReveal() {
-            let items = document.querySelectorAll('.js-tl-item');
-            
-            function checkScroll() {
-                items.forEach(item => {
-                    let position = item.getBoundingClientRect().top;
-                    // تفعيل الظهور قبل وصول العنصر لمنتصف الشاشة
-                    if(position < window.innerHeight * 0.85) {
-                        item.classList.add('tl-is-visible');
-                    }
-                });
-            }
+                    <div class="special-event">
+                        <div class="event-icon">🎖️</div>
+                        <div class="event-text">
+                            <h4>عيد الشرطة - 25 يناير</h4>
+                            <p>يخلد ذكرى صمود رجال الشرطة في الإسماعيلية عام 1952 دفاعاً عن كرامة الوطن، وهو أحد أبرز المحطات التاريخية في مسيرة الوزارة.</p>
+                        </div>
+                    </div>
 
-            // تحقق أولي عند التحميل
-            checkScroll();
-            // تحقق عند التمرير
-            window.addEventListener('scroll', checkScroll);
-        }
+                    <div class="moi-historical-timeline-root">
+                        <div class="moi-historical-timeline-line"></div>
+                        <div class="moi-historical-items-container">
+                            <div class="moi-tl-card-item tl-left-card js-tl-item">
+                                <div class="tl-node-dot"></div>
+                                <div class="tl-neon-inner-card">
+                                    <div class="icon">🔍</div>
+                                    <h3 class="golden-text">أنظمة الذكاء الاصطناعي</h3>
+                                    <p>تطوير أنظمة ذكية لمكافحة الجريمة وتأمين المنافذ بأحدث التقنيات العالمية.</p>
+                                </div>
+                            </div>
+                            <div class="moi-tl-card-item tl-right-card js-tl-item">
+                                <div class="tl-node-dot"></div>
+                                <div class="tl-neon-inner-card">
+                                    <div class="tl-counter-box">
+                                        <span class="tl-counter-plus">+</span>
+                                        <span class="tl-counter-num js-moi-counter" data-moi-val="500">0</span>
+                                    </div>
+                                    <h3 class="golden-text">خدمة إلكترونية</h3>
+                                    <p>تحويل معظم الخدمات الجماهيرية إلى خدمات رقمية سهلة الوصول.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        // تشغيل الوظائف عند تحميل الصفحة
-        window.addEventListener('DOMContentLoaded', () => {
-            initScrollReveal();
-            // تشغيل العداد مرة واحدة بعد فترة قصيرة
-            setTimeout(initCounters, 500); 
-        });
-    })();
-    document.addEventListener("DOMContentLoaded", () => {
-    // اختاري البطاقات بتاعتك (مثلاً التأسيس وعيد الشرطة)
-    const cards = document.querySelectorAll('.history-card-original'); 
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-me');
-            }
-        });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => {
-        card.style.opacity = "0"; // تبدأ مخفية عشان تتحرك
-        observer.observe(card);
-    });
-});
-    </script>
-
-            <p class="closing-statement">
-                واليوم، تواصل وزارة الداخلية جهودها في تحقيق الأمن وتعزيز الثقة بين المواطن ورجال الشرطة، لحماية المجتمع بكل فئاته.
-            </p>
+                    <p class="closing-statement">
+                        واليوم، تواصل وزارة الداخلية جهودها في تحقيق الأمن وتعزيز الثقة بين المواطن ورجال الشرطة، لحماية المجتمع بكل فئاته.
+                    </p>
+                </div>
+            </div>
         </div>
-    </div>
-<!-- زر العودة للأعلى -->
-<div id="scrollToTop" class="back-to-top">
-    <img src="1776688663891.png" alt="Top">
-</div>
+    </section>
 
-<footer class="main-footer">
-    <div class="footer-content">
-        <div class="footer-logo">🛡️ نبض الداخلية</div>
-        <p class="copyrighttext">
-            جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة 
-            <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span>
-        </p>
-        <div class="footer-line"></div>
+    <!-- زر العودة للأعلى -->
+    <div id="scrollToTop" class="back-to-top">
+        <img src="1776688663891.png" alt="Top">
     </div>
-</footer>
-<!-- مكتبة الجسيمات للخلفية -->
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">🛡️ نبض الداخلية</div>
+            <p class="copyrighttext">
+                جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة 
+                <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span>
+            </p>
+            <div class="footer-line"></div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="حربيةو شرطة.js"></script>
     <script src="index.js"></script>
-	</section>
+    <script src="رئيسية.js"></script>
+
+    <script>
+        (function() {
+            function initCounters() {
+                let counters = document.querySelectorAll(".js-moi-counter");
+                let intervalDuration = 3000;
+                counters.forEach((counter) => {
+                    let startValue = 0;
+                    let endValue = parseInt(counter.getAttribute("data-moi-val"));
+                    let step = Math.ceil(endValue / (intervalDuration / 30));
+                    let duration = 30;
+                    let counterId = setInterval(function () {
+                        startValue += step;
+                        if (startValue >= endValue) {
+                            counter.textContent = endValue;
+                            clearInterval(counterId);
+                        } else {
+                            counter.textContent = startValue;
+                        }
+                    }, duration);
+                });
+            }
+
+            function initScrollReveal() {
+                let items = document.querySelectorAll('.js-tl-item');
+                function checkScroll() {
+                    items.forEach(item => {
+                        let position = item.getBoundingClientRect().top;
+                        if (position < window.innerHeight * 0.85) {
+                            item.classList.add('tl-is-visible');
+                        }
+                    });
+                }
+                checkScroll();
+                window.addEventListener('scroll', checkScroll);
+            }
+
+            window.addEventListener('DOMContentLoaded', () => {
+                initScrollReveal();
+                setTimeout(initCounters, 500);
+            });
+        })();
+    </script>
+
 </body>
 </html>
-
-    
