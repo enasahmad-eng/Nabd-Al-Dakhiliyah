@@ -8,8 +8,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="شرطة و حربية .css">
+    <style>
+        /* إصلاح مباشر: منع grid style.css من التأثير */
+        main.main-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            grid-template-columns: unset !important;
+            width: 100% !important;
+            min-height: 100vh !important;
+            padding: 110px 16px 60px !important;
+            margin: 0 auto !important;
+            gap: 0 !important;
+            box-sizing: border-box !important;
+            position: relative !important;
+            z-index: 1 !important;
+        }
+        @media screen and (max-width: 768px) {
+            main.main-wrapper {
+                padding: 105px 12px 40px !important;
+            }
+        }
+        @media screen and (max-width: 400px) {
+            main.main-wrapper {
+                padding: 95px 8px 30px !important;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <div id="particles-js"></div>
+
     <header class="navbar">
         <div class="site-logo"><img src="1776688663891.png" alt="Logo"></div>
         <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
@@ -30,10 +61,7 @@
         </button>
     </header>
 
-    <div id="particles-js"></div>
-    <div id="scrollToTop" class="back-to-top"><img src="1776688663891.png" alt="Top"></div>
-
-    <div class="main-wrapper">
+    <main class="main-wrapper">
         <div class="security-card">
             <header class="card-header">
                 <div class="emblem"><span class="gold-star">★</span></div>
@@ -75,18 +103,21 @@
                 <a href="https://moi.gov.eg" class="hashtag">#وزارة_الداخلية</a>
             </footer>
         </div>
+    </main>
+
+    <div id="scrollToTop" class="back-to-top" style="display:none;">
+        <img src="1776688663891.png" alt="Top">
     </div>
 
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-logo">🛡️ نبض الداخلية</div>
             <p class="copyrighttext">جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span></p>
+            <div class="footer-line"></div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="حربيةو شرطة.js"></script>
     <script src="index.js"></script>
-    <script src="رئيسية.js"></script>
 </body>
 </html>

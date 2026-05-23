@@ -1,55 +1,89 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll('.card');
-    
-    cards.forEach((card, index) => {
-        // نجهز الكروت تحت ومختفية
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        
-        // ظهور تدريجي "تكتيكي"
-        setTimeout(() => {
-            card.style.transition = 'all 0.6s ease-out';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, index * 100); // فرق 100ms بين كل كارد والتاني
-    });
-});
-const allCards = document.querySelectorAll('.card');
 
-allCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.borderColor = '#00e5ff';
-        card.style.boxShadow = '0 0 20px rgba(0, 229, 255, 0.2)';
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.borderColor = 'rgba(0, 229, 255, 0.1)';
-        card.style.boxShadow = 'none';
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const mainSection = document.querySelector('main');
-    if (mainSection) {
-        mainSection.style.transition = "margin-top 1s ease";
-        mainSection.style.marginTop = "60px"; // المسافة اللي إنتي عايزاها
+    // ==========================================
+    // 1. زرار السهم (الطلوع لفوق)
+    // ==========================================
+    const scrollBtn = document.getElementById("scrollToTop");
+
+    if (scrollBtn) {
+        scrollBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.style.display = "flex";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        });
     }
-});
-// التقطنا الزرار سواء كان مكتوب في الـ HTML كـ id أو class
-const mobileMenuBtn = document.querySelector('#mobileMenuBtn, .menu-toggle-btn');
-const navLinksList = document.querySelector('header.navbar .nav-links'); 
 
-if (mobileMenuBtn && navLinksList) {
-  mobileMenuBtn.addEventListener('click', (e) => {
-    e.preventDefault(); 
-    
-    // يضيف أو يحذف الكلاس المسؤول عن الفتح
-    navLinksList.classList.toggle('open-menu');
-    
-    // يغير شكل الزرار لـ X
-    mobileMenuBtn.classList.toggle('active-btn');
-    
-    // سطر للتأكد في المتصفح أن الضغطة تعمل (يمكنكِ حذفه لاحقاً)
-    console.log("الموقع شغال والقائمة حالتها الآن: ", navLinksList.classList.contains('open-menu'));
-  });
+    // ==========================================
+    // 2. القائمة المنسدلة على الموبايل
+    // ==========================================
+    const mobileMenuBtn = document.querySelector('#mobileMenuBtn, .menu-toggle-btn');
+    const navLinksList = document.querySelector('.navbar .nav-links');
+    const mainHeaderElement = document.querySelector('.navbar');
+
+    if (mobileMenuBtn && navLinksList) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            navLinksList.classList.toggle('open-menu');
+            mobileMenuBtn.classList.toggle('active-btn');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (mainHeaderElement && !mainHeaderElement.contains(e.target) && navLinksList.classList.contains('open-menu')) {
+                navLinksList.classList.remove('open-menu');
+                mobileMenuBtn.classList.remove('active-btn');
+            }
+        });
+    }
+
+    // ==========================================
+    // 3. أنيميشن ظهور الكروت التدريجي
+    // ==========================================
+    const cards = document.querySelectorAll('.card');
+    if (cards.length > 0) {
+        cards.forEach((card, index) => {
+            card.style.opacity = "0";
+            card.style.transform = "translateY(50px)";
+            setTimeout(() => {
+                card.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0)";
+            }, index * 150);
+        });
+    }
+
+});
+
+// ==========================================
+// 4. خلفية الجسيمات (Particles)
+// ==========================================
+if (document.getElementById("particles-js")) {
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#00d2ff" },
+        "shape": { "type": "circle" },
+        "opacity": {
+          "value": 0.5, "random": true,
+          "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false }
+        },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#00d2ff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      },
+      "retina_detect": true
+    });
 }
