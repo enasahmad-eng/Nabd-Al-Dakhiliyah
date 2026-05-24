@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="بؤر إجرامية.css">
 </head>
 <body>
+
+    <div id="particles-js"></div>
+
     <header class="navbar">
         <div class="site-logo"><img src="1776688663891.png" alt="Logo"></div>
         <div class="site-name">نَبْضُ الدَّاخِلِيَّةِ</div>
@@ -30,10 +33,12 @@
         </button>
     </header>
 
-    <div id="particles-js"></div>
-    <div id="scrollToTop" class="back-to-top"><img src="1776688663891.png" alt="Top"></div>
+    <div id="scrollToTop" class="back-to-top" style="display:none;">
+        <img src="1776688663891.png" alt="Top">
+    </div>
 
-    <main class="page-wrapper">
+    <!-- ✅ غيرنا main لـ div -->
+    <div class="page-wrapper">
         <div class="report-container">
             <div class="media-card">
                 <h1 class="top-title">بيان إعلامي أمني</h1>
@@ -50,6 +55,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="text-details-card">
                 <p class="intro-text">في إطار <span class="cyan-link">كشف ملابسات</span> ما تم رصده من أنشطة إجرامية وتوجيه الضربات الإستباقية لبؤر جلب وتجارة المواد المخدرة والأسلحة غير المرخصة.</p>
                 <div class="info-block">
@@ -66,17 +72,17 @@
                 </footer>
             </div>
         </div>
-    </main>
+    </div>
 
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-logo">🛡️ نبض الداخلية</div>
             <p class="copyrighttext">جميع الحقوق محفوظة &copy; 2026 | صُنع بشغف بواسطة <span class="team-name">كلية الحاسبات و الذكاء الإصطناعي</span></p>
+            <div class="footer-line"></div>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="حربيةو شرطة.js"></script>
     <script src="بؤر إجرامية.js"></script>
     <script src="index.js"></script>
     <script src="رئيسية.js"></script>
