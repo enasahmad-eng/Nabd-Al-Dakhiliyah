@@ -2,7 +2,7 @@
 .contact-body {
     margin: 0;
     min-height: 100vh;
-    background-color: #050a18; /* الكحلي الأساسي */
+    background-color: #050a18;
     background-image: 
         radial-gradient(circle at 20% 30%, rgba(28, 49, 94, 0.4) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(18, 35, 69, 0.4) 0%, transparent 50%);
@@ -26,81 +26,91 @@
     z-index: 1;
 }
 
-    .back-to-top {
-    position: fixed; /* يخليها ثابتة في مكانها حتى لو حركتي الصفحة */
-    bottom: 20px;    /* المسافة من تحت */
-    right: 20px;     /* المسافة من اليمين */
-    width: 60px;     /* عرض الدائرة */
-    height: 60px;    /* طول الدائرة */
-    border-radius: 50%; /* عشان تكون دائرية تماماً */
-    overflow: hidden;   /* عشان الصورة ما تطلعش بره الدائرة */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* تأثير وهج خفيف */
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;   /* عشان تكون فوق كل عناصر الصفحة */
+    z-index: 1000;
 }
 
 .back-to-top img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يخلي الصورة تملأ الدائرة من غير ما تتمط */
+    object-fit: cover;
 }
 
-/* تأثير عند تمرير الماوس فوقها */
 .back-to-top:hover {
-    transform: scale(1.1); /* تكبر شوية */
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9); /* يزيد الوهج */
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9);
 }
+
+/* ================================================== */
+/* الفوتر                                             */
+/* ================================================== */
 .main-footer {
-    background: linear-gradient(to top, rgba(5, 10, 24, 1), rgba(5, 10, 24, 0.9));
-    width: 100%;
-    padding: 30px 0; /* زيادة المساحة العلوية والسفلية */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: #000 !important;
+    width: 100% !important;
+    padding: 30px 20px !important;
     direction: rtl;
-    border-top: 1px solid rgba(191, 149, 63, 0.4);
-    
-    /* الخصائص السحرية للتوسيط */
-    display: flex;
-    flex-direction: column; /* ترتيب العناصر عمودياً */
-    justify-content: center; /* توسيط عمودي */
-    align-items: center;    /* توسيط أفقي */
+    border-top: 2px solid gold !important;
+    position: relative !important;
+    z-index: 9999 !important;
+    margin-top: 20px !important;
+    text-align: center;
 }
 
 .footer-content {
     width: 100%;
     max-width: 800px;
-    text-align: center; /* توسيط النصوص داخل الحاوية */
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 350px;
+    margin: 0 auto !important;
 }
 
 .footer-logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* المسافة بين النص والأيقونة */
+    gap: 10px;
     font-family: 'Aref Ruqaa', serif;
     font-size: 28px;
     margin-bottom: 10px;
+    color: #fcf6ba !important;
+    -webkit-text-fill-color: #fcf6ba !important;
+    background: none !important;
 }
 
 .team-name {
-    background: linear-gradient(to bottom, #fcf6ba, #bf953f);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #bf953f !important;
+    -webkit-text-fill-color: #bf953f !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
     font-weight: bold;
     display: inline-block;
 }
 
 .copyrighttext {
-    color: #cbd5e1;
+    color: #cbd5e1 !important;
+    -webkit-text-fill-color: #cbd5e1 !important;
     font-size: 14px;
     opacity: 0.8;
-    margin: 0; /* إزالة الهوامش الافتراضية للـ p */
+    margin: 0;
+    display: block !important;
 }
 
 .footer-line {
@@ -109,6 +119,10 @@
     background: linear-gradient(90deg, transparent, #bf953f, transparent);
     margin-top: 15px;
 }
+
+/* ================================================== */
+/* المتغيرات والكارد الرئيسي                          */
+/* ================================================== */
 :root {
     --gold-accent: #d4af37;
     --cyan-glow: #00e5ff;
@@ -121,29 +135,77 @@
     padding: 80px 20px;
     background: transparent;
     direction: rtl;
+    min-height: auto !important;
 }
 
 .cyber-report-card {
-    background: rgba(11, 22, 36, 0.85);
+    position: relative;
+    background: #0b1624;
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 229, 255, 0.2);
     border-radius: 20px;
     max-width: 800px;
     width: 100%;
     padding: 40px;
     box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    overflow: hidden;
+    border: none;
+    transform: none !important;
+    transition: none !important;
 }
 
+/* النور اللي بيلف */
+.cyber-report-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, transparent, transparent, #00e5ff);
+    animation: rotate-border 4s linear infinite;
+}
+
+/* الطبقة فوق النور */
+.cyber-report-card::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: #0b1624;
+    border-radius: 16px;
+    z-index: 0;
+}
+
+/* المحتوى فوق النور */
+.cyber-report-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ================================================== */
+/* ✅ العنوان - إصلاح تأثير الـ Typewriter             */
+/* ================================================== */
 .main-title {
-    color: var(--gold-accent);
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    color: var(--gold-accent) !important;
+    -webkit-text-fill-color: var(--gold-accent) !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 5px !important;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3) !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 2.5rem !important;
 }
 
 .security-badge {
     color: #fff;
+    -webkit-text-fill-color: #fff;
     text-align: center;
     font-size: 0.9rem;
     letter-spacing: 1px;
@@ -163,25 +225,32 @@
 .highlight-cyan { color: var(--cyan-glow); font-weight: bold; }
 .gold-text { color: var(--gold-accent); }
 
-/* تنسيق برواز الصورة */
+/* برواز الصورة */
 .media-container {
     margin: 30px 0;
     border: 2px solid var(--gold-accent);
     padding: 5px;
     position: relative;
+    overflow: hidden;
 }
+
+.media-container::before {
+    content: "SCANNING...";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--cyan-glow);
+    font-size: 10px;
+    font-family: monospace;
+    z-index: 5;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
 
 .captured-img {
     width: 100%;
     display: block;
-}
-
-.strip-footer {
-    background: rgba(0,0,0,0.9);
-    color: var(--gold-accent);
-    padding: 5px 15px;
-    font-size: 0.8rem;
-    border-top: 1px solid var(--gold-accent);
 }
 
 /* شبكة المضبوطات */
@@ -201,14 +270,14 @@
     font-size: 0.85rem;
 }
 
-/* تنسيق الفوتر لضمان التوسيط التام */
+/* فوتر الكارد */
 .final-footer {
     margin-top: 40px;
-    border-top: 1px solid rgba(212, 175, 55, 0.2); /* خط ذهبي هادي */
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
     padding-top: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* يوسط كل العناصر بداخله أفقياً */
+    align-items: center;
     text-align: center;
     width: 100%;
 }
@@ -221,59 +290,43 @@
 }
 
 .hashtag {
-    color: #00e5ff;
-    font-size: 2.2rem;
-    font-weight: bold;
-    text-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
-    margin: 0 auto; /* ضمان إضافي للتوسيط */
-    display: block;
-       display: inline-block;
-    font-family: 'Traditional Arabic', serif; 
+    display: inline-block;
+    font-family: 'Traditional Arabic', serif;
     font-size: 2rem;
     text-align: center;
     font-weight: 900;
-    color: #00d2ff; /* لون أزرق نيون */
+    color: #00d2ff;
     text-decoration: none;
     margin-top: 20px;
-    /* تأثير التوهج النيوني القوي */
-    text-shadow: 0 0 5px #f2ea07, 
-                 0 0 10px hsla(209, 97%, 48%, 0.522), 
-                 0 0 20px hsl(260, 87%, 47%), 
+    text-shadow: 0 0 5px #f2ea07,
+                 0 0 10px hsla(209, 97%, 48%, 0.522),
+                 0 0 20px hsl(260, 87%, 47%),
                  0 0 40px rgba(0, 210, 255, 0.7);
     transition: all 0.4s ease;
     cursor: pointer;
 }
-/* حركة نبض خفيفة للهاشتاج لزيادة التفاعل */
+
 .hashtag:hover {
     transform: scale(1.1);
     color: #fff;
-    text-shadow: 0 0 10px #fff, 
-      0 0 20px hsl(244, 100%, 50%), 
-      0 0 40px hsl(221, 100%, 50%);
-    text-align: center;
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px hsl(244, 100%, 50%),
+                 0 0 40px hsl(221, 100%, 50%);
 }
 
-/* التأكد من ثبات الكارد تماماً */
-.cyber-report-card {
-    transform: none !important; /* إلغاء أي دوران سابق */
-    transition: none !important;
-    background: rgba(11, 22, 36, 0.9); /* تقليل الشفافية قليلاً لزيادة الوضوح */
-    border: 1px solid #1e3a5f;
-}
-/* تأثير الاختفاء قبل الظهور */
+/* تأثير الظهور */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.8s ease-out;
 }
 
-/* حالة الظهور */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* توهج النيون المتحرك للهاشتاج */
+/* توهج الهاشتاج */
 @keyframes neonPulse {
     0% { text-shadow: 0 0 10px rgba(0, 229, 255, 0.4); }
     50% { text-shadow: 0 0 30px rgba(0, 229, 255, 1), 0 0 50px rgba(0, 229, 255, 0.6); }
@@ -283,7 +336,8 @@
 .hashtag-animate {
     animation: neonPulse 2s infinite;
 }
-/* تأثير الليزر اللي بيمسح الصفحة */
+
+/* الليزر */
 .scanline {
     width: 100%;
     height: 100px;
@@ -301,221 +355,100 @@
     100% { bottom: -100px; }
 }
 
-/* تأثير التوهج عند الوقوف بالماوس على أي عنصر */
-.cyber-report-card *:hover {
-    color: #fff;
-    text-shadow: 0 0 8px var(--cyan-glow);
-    transition: 0.3s;
-}
-
-/* فريم الصورة "المتطور" */
-.media-container {
-    position: relative;
-    overflow: hidden;
-}
-
-.media-container::before {
-    content: "SCANNING...";
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: var(--cyan-glow);
-    font-size: 10px;
-    font-family: monospace;
-    z-index: 5;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink { 50% { opacity: 0; } }
-/* الحاوية اللي بتسمح بالبرواز المتحرك */
-.cyber-report-card {
-    position: relative;
-    background: #0b1624; /* لون خلفية الكارد */
-    overflow: hidden; /* عشان النور اللي بيلف ميخرجش بره */
-    border: none; /* هنستبدل البرواز القديم بالنور */
-}
-
-/* النور اللي بيلف */
-.cyber-report-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: conic-gradient(
-        transparent, 
-        transparent, 
-        transparent, 
-        #00e5ff /* لون النور السيان */
-    );
-    animation: rotate-border 4s linear infinite;
-}
-
-/* الطبقة اللي فوق النور عشان يبان كأنه برواز رفيع */
-.cyber-report-card::after {
-    content: '';
-    position: absolute;
-    inset: 4px; /* سمك البرواز */
-    background: #0b1624;
-    border-radius: 16px;
-    z-index: 0;
-}
-
-/* نضمن إن المحتوى فوق النور */
-.cyber-report-card > * {
-    position: relative;
-    z-index: 1;
-}
-
-@keyframes rotate-border {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+/* الجسيمات */
 #particles-js {
-    position: fixed; /* يخلي الخلفية ثابتة ومغطية الشاشة مهما عملتي Scroll */
-    width: 100vw;    /* عرض الشاشة بالكامل */
-    height: 100vh;   /* طول الشاشة بالكامل */
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
-    z-index: -1;     /* عشان يفضل ورا الكارد وكل المحتوى */
+    z-index: -1;
 }
+
+/* ================================================== */
+/* الموبايل                                           */
+/* ================================================== */
 @media screen and (max-width: 768px) {
-/* ======================================================== */
-/* 1. التنسيق الأساسي للموقع واللابتوب (Desktop)            */
-/* ======================================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* الهيدر الأساسي */
-header.navbar {
-    display: flex;
-    justify-content: space-between; /* يحافظ على توزيع الأطراف اللوجو والأقسام والاسم */
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #050a18; /* الخلفية الكحلي الفخمة */
-    width: 100%;
-    position: relative; /* مهم جداً عشان قائمة الموبايل تفتح مظبوط تحته */
-}
-
-/* القائمة والأقسام في الكمبيوتر */
-.navbar .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px; /* المسافة بين الروابط في اللابتوب */
-}
-
-/* إخفاء زرار الموبايل تلقائياً على الشاشات الكبيرة */
-.menu-toggle-btn {
-    display: none !important;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-    padding: 0;
-}
-
-.menu-toggle-btn .toggle-line {
-    height: 3px;
-    width: 100%;
-    background-color: #bf953f; /* اللون الذهبي الراقي */
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-
-/* ======================================================== */
-/* 2. كود الموبايل والشاشات الصغيرة (Media Query)          */
-/* ======================================================== */
-@media screen and (max-width: 768px) {
-    
-    /* إظهار زرار الـ 3 شروط في الموبايل */
-    .menu-toggle-btn {
-        display: flex !important;
-        
-    }
-@media screen and (max-width: 768px) {
-    header.navbar {
-        height: auto !important; /* بيخلي الهيدر يتمدد براحته */
-        overflow: visible !important; /* بيسمح للقائمة تخرج بره حدود الهيدر وتظهر للناس */
-    }
-}
-@media screen and (max-width: 768px) {
-    
-    /* إجبار الهيدر يفتح ويظهر اللي جواه */
-    header.navbar {
-        height: auto !important;
-        overflow: visible !important; 
+    .page-wrapper {
+        padding: 90px 12px 20px !important;
+        min-height: auto !important;
     }
 
-    .menu-toggle-btn {
-        display: flex !important;
+    .cyber-report-card {
+        padding: 20px 14px !important;
     }
 
-    header.navbar .nav-links {
-        display: flex !important;
+    .main-title {
+        font-size: 1.3rem !important;
+        min-height: 2rem !important;
+    }
+
+    .main-footer {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background: #000 !important;
+        border-top: 2px solid gold !important;
+        padding: 25px 16px !important;
+        margin-top: 20px !important;
+        width: 100% !important;
+        position: relative !important;
+        z-index: 9999 !important;
+    }
+
+    .main-footer .footer-logo {
+        color: #fcf6ba !important;
+        -webkit-text-fill-color: #fcf6ba !important;
+        background: none !important;
+        display: block !important;
+        margin-bottom: 10px !important;
+    }
+
+    .main-footer .copyrighttext {
+        color: #cbd5e1 !important;
+        -webkit-text-fill-color: #cbd5e1 !important;
+        background: none !important;
+        display: block !important;
+    }
+
+    .main-footer .team-name {
+        color: #bf953f !important;
+        -webkit-text-fill-color: #bf953f !important;
+        background: none !important;
+        -webkit-background-clip: unset !important;
+    }
+
+    .navbar .nav-links {
+        display: none !important;
         position: absolute;
-        top: 100%; 
+        top: 100%;
         right: 0;
         width: 100%;
-        background-color: #050a18; 
-        flex-direction: column !important; 
+        background-color: #050a18;
+        flex-direction: column !important;
         align-items: center;
         gap: 0 !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        z-index: 9999 !important; /* رفع الـ z-index عشان تظهر فوق أي عنصر تاني */
-
-        max-height: 0; 
-        overflow: hidden; 
-        transition: max-height 0.4s ease-in-out;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.4);
+        padding: 10px 0 !important;
+        z-index: 9999 !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
     }
 
-    header.navbar .nav-links a {
+    .navbar .nav-links a {
         display: block !important;
         text-align: center !important;
-        padding: 14px 0 !important; 
+        padding: 15px 0 !important;
         width: 100% !important;
-        font-size: 0.95rem !important;
-        background-color: rgba(255, 255, 255, 0.01) !important;
-        border-bottom: 1px solid rgba(191, 149, 63, 0.1) !important; 
-        margin: 0 !important;
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(191, 149, 63, 0.15) !important;
     }
 
-    /* زودنا المساحة جداً هنا لـ 800 بكسل عشان تستوعب الـ 8 أقسام بالكامل وزيادة */
-    header.navbar .nav-links.open-menu {
-        max-height: 800px !important; 
-    }
-}
-
-/* ======================================================== */
-/* 3. كود ضبط الفوتر للموبايل (Media Query)                 */
-/* ======================================================== */
-@media screen and (max-width: 768px) {
-    footer, .footer-container {
-        flex-direction: column !important;
-        text-align: center !important;
-        gap: 30px !important;
-        padding: 30px 20px !important;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr !important;
-        text-align: center !important;
-    }
-
-    .footer-bottom, .copyright {
-        flex-direction: column !important;
-        gap: 10px !important;
-        text-align: center !important;
-        padding-top: 15px !important;
+    .navbar .nav-links.open-menu {
+        display: flex !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
 }
