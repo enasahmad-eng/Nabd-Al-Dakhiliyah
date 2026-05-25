@@ -309,7 +309,8 @@ main {
     position: relative !important;
     z-index: 9999 !important;
     border-top: 2px solid gold;
-    margin-top: 100px;
+    /* ✅ الإصلاح: margin-top auto يدفع الفوتر لأسفل دايماً */
+    margin-top: auto !important;
     width: 100% !important;
     direction: rtl;
 }
@@ -372,13 +373,11 @@ main {
 /* ================================================== */
 @media screen and (max-width: 768px) {
 
-    /* إصلاح الـ body */
     body {
         display: block !important;
         min-height: 100vh;
     }
 
-    /* إظهار زرار الـ 3 شرط */
     .menu-toggle-btn {
         display: flex !important;
         flex-direction: column !important;
@@ -393,7 +392,6 @@ main {
         position: relative !important;
     }
 
-    /* النافبار */
     .navbar {
         height: 70px !important;
         position: fixed !important;
@@ -404,7 +402,6 @@ main {
         padding: 0 16px !important;
     }
 
-    /* القائمة مغلقة */
     .navbar .nav-links {
         max-height: 0 !important;
         overflow: hidden !important;
@@ -426,7 +423,6 @@ main {
         transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease !important;
     }
 
-    /* القائمة مفتوحة */
     .navbar .nav-links.open-menu {
         max-height: 600px !important;
         opacity: 1 !important;
@@ -434,7 +430,6 @@ main {
         padding: 10px 0 !important;
     }
 
-    /* الروابط */
     .navbar .nav-links a {
         display: block !important;
         width: 100% !important;
@@ -480,9 +475,6 @@ main {
         margin-top: 70px !important;
     }
 
-    /* ================================================== */
-    /* إصلاح الفوتر على الموبايل - أهم جزء               */
-    /* ================================================== */
     .main-footer {
         display: block !important;
         visibility: visible !important;
@@ -497,7 +489,6 @@ main {
         border-top: 2px solid gold !important;
     }
 
-    /* إصلاح النصوص داخل الفوتر */
     .main-footer * {
         opacity: 1 !important;
         visibility: visible !important;
@@ -522,7 +513,6 @@ main {
         -webkit-background-clip: unset !important;
     }
 
-    /* مسافة من تحت المحتوى قبل الفوتر */
     .card:last-child,
     article,
     .container,
@@ -539,9 +529,10 @@ main {
         margin-bottom: 30px !important;
     }
 }
-/* ========================================= */
-/* إصلاح نهائي للفوتر على الموبايل           */
-/* ========================================= */
+
+/* ================================================== */
+/* إصلاح نهائي للفوتر على الموبايل                   */
+/* ================================================== */
 @media screen and (max-width: 768px) {
 
     .main-footer {

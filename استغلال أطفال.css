@@ -2,7 +2,7 @@
 .contact-body {
     margin: 0;
     min-height: 100vh;
-    background-color: #050a18; /* الكحلي الأساسي */
+    background-color: #050a18;
     background-image: 
         radial-gradient(circle at 20% 30%, rgba(28, 49, 94, 0.4) 0%, transparent 50%),
         radial-gradient(circle at 80% 70%, rgba(18, 35, 69, 0.4) 0%, transparent 50%);
@@ -16,7 +16,6 @@
     to { background-position: 100% 100%; }
 }
 
-/* 2. السنترة الكاملة */
 .contact-wrapper {
     flex: 1;
     display: flex;
@@ -25,36 +24,35 @@
     padding: 20px;
     z-index: 1;
 }
+
 .back-to-top {
-    position: fixed; /* يخليها ثابتة في مكانها حتى لو حركتي الصفحة */
-    bottom: 20px;    /* المسافة من تحت */
-    right: 20px;     /* المسافة من اليمين */
-    width: 60px;     /* عرض الدائرة */
-    height: 60px;    /* طول الدائرة */
-    border-radius: 50%; /* عشان تكون دائرية تماماً */
-    overflow: hidden;   /* عشان الصورة ما تطلعش بره الدائرة */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* تأثير وهج خفيف */
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    z-index: 1000;   /* عشان تكون فوق كل عناصر الصفحة */
+    z-index: 1000;
 }
 
 .back-to-top img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يخلي الصورة تملأ الدائرة من غير ما تتمط */
+    object-fit: cover;
 }
 
-/* تأثير عند تمرير الماوس فوقها */
 .back-to-top:hover {
-    transform: scale(1.1); /* تكبر شوية */
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9); /* يزيد الوهج */
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.9);
 }
 
-/* ضبط عام للمتصفح لمنع التداخل */
 * {
     box-sizing: border-box;
 }
@@ -63,7 +61,7 @@
 article {
     max-width: 900px;
     margin: 50px auto;
-    background: rgba(11, 19, 32, 0.85); /* شفافية زجاجية */
+    background: rgba(11, 19, 32, 0.85);
     backdrop-filter: blur(15px);
     border: 2px solid #00d2ff;
     border-radius: 25px;
@@ -73,21 +71,22 @@ article {
     overflow: hidden;
     animation: border-pulse 4s infinite alternate;
 }
+
 @keyframes border-pulse {
     0% { border-color: #00d2ff; box-shadow: 0 0 10px #00d2ff; }
     50% { border-color: #d4af37; box-shadow: 0 0 20px #d4af37; }
     100% { border-color: #00d2ff; box-shadow: 0 0 10px #00d2ff; }
 }
 
-/* الهيدر الخاص بالخبر */
 .news-header h2 {
     font-size: 2.2rem;
-    color: #f7e08a; /* ذهبي فاتح */
+    color: #f7e08a;
     text-align: center;
     margin-bottom: 10px;
     animation: slide-in-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     text-shadow: 0 0 10px rgba(247, 224, 138, 0.3);
 }
+
 @keyframes slide-in-top {
     0% { transform: translateY(-100px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
@@ -101,7 +100,6 @@ article {
     margin-bottom: 30px;
 }
 
-/* تنسيق الصور */
 .image-box img {
     width: 100%;
     border-radius: 15px;
@@ -111,62 +109,53 @@ article {
     position: relative;
     overflow: hidden;
 }
-.image-box::after {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    background: rgba(0, 210, 255, 0.7);
-    box-shadow: 0 0 15px #00d2ff;
-}
 
 .image-box img:hover {
     transform: scale(1.02);
     border-color: #00d2ff;
 }
 
-/* محتوى الخبر */
 .news-content h3 {
     color: #00d2ff;
     border-right: 4px solid #d4af37;
     padding-right: 15px;
     margin-top: 30px;
 }
+
 .news-content ul {
-    margin-right: 10px; /* دفع النقاط بعيداً عن الحافة اليمنى */
+    margin-right: 10px;
     margin-left: 20px;
     padding: 0;
-    list-style-type: none; /* هنغير شكل النقطة لشكل احترافي */
+    list-style-type: none;
 }
+
 .news-content p, .news-content li {
-   position: relative;
-    padding-right: 25px; /* مسافة بين النص والأيقونة الجديدة */
+    position: relative;
+    padding-right: 25px;
     margin-bottom: 15px;
     color: #cbd5e1;
 }
-/* إضافة أيقونة "رادار" بدل النقطة المملة */
+
 .news-content li::before {
     content: '◈'; 
     position: absolute;
     right: 0;
-    color: #d4af37; /* لون ذهبي للنقطة */
+    color: #d4af37;
     font-weight: bold;
 }
-/* الحاوية الرئيسية - وداعاً للقص العشوائي */
+
+/* قسم الإبلاغ */
 .report-section {
     background: rgba(2, 8, 18, 0.95);
     padding: 50px 40px;
     margin-top: 50px;
     position: relative;
     border: 1px solid #00d2ff;
-    /* إضافة زوايا تقنية بدل القص */
     border-radius: 4px;
     box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
     direction: rtl;
 }
-/* تنسيق عنوان جملة التقديم */
+
 .report-section h3 {
     text-align: center;
     font-size: 1.5rem;
@@ -176,10 +165,8 @@ article {
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
     font-weight: 900;
-    text-transform: uppercase;
 }
 
-/* زوايا ديكورية "أكشن" في الأركان الأربعة */
 .report-section::after, .report-section::before {
     content: '';
     position: absolute;
@@ -191,7 +178,6 @@ article {
 .report-section::before { top: -5px; right: -5px; border-bottom: none; border-left: none; }
 .report-section::after { bottom: -5px; left: -5px; border-top: none; border-right: none; }
 
-/* زر الإرسال - حركة "التحميل القتالي" */
 .report-section button {
     width: 100%;
     padding: 20px;
@@ -208,7 +194,6 @@ article {
     z-index: 1;
 }
 
-/* تأثير التعبئة عند الـ Hover */
 .report-section button:hover {
     color: #000;
     box-shadow: 0 0 40px #00d2ff;
@@ -230,16 +215,14 @@ article {
     left: 0;
 }
 
-/* حركة السابمت (عند الضغط) */
 .report-section button:active {
     transform: scale(0.95);
     filter: brightness(1.5);
 }
 
-/* معالجة الحقول لضمان عدم الالتصاق */
 .report-section input {
     width: 100%;
-    box-sizing: border-box; /* بيضمن إن الـ Padding مبيزودش الحجم ويبوظ الحدود */
+    box-sizing: border-box;
     padding: 18px;
     margin-bottom: 25px;
     background: rgba(255, 255, 255, 0.02);
@@ -254,32 +237,87 @@ article {
     background: rgba(212, 175, 55, 0.05);
     outline: none;
 }
-/* الزرار في حالة النجاح */
+
 .report-section button.success-state {
-    background: #28a745 !important; /* أخضر بس شيك */
+    background: #28a745 !important;
     color: #fff !important;
     border-color: #fff !important;
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%); /* لازم نكرر القص هنا عشان ما يختفيش */
     box-shadow: 0 0 20px rgba(40, 167, 69, 0.6);
-    pointer-events: none; /* عشان ما يتضغطش تاني */
+    pointer-events: none;
     transition: 0.5s all ease;
 }
+
 #particles-js {
     position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
-    mix-blend-mode: screen; /* بيخلي النقط والخطوط تندمج مع الألوان اللي وراها بشكل مبهر */
+    mix-blend-mode: screen;
     left: 0;
     z-index: -1; 
-    background-color: transparent; /* غيرنا اللون هنا ليكون شفافاً */
-    pointer-events: none; /* عشان ما يمنعش الضغط على الزراير */
+    background-color: transparent;
+    pointer-events: none;
 }
+
+.main-footer {
+    background: linear-gradient(to top, rgba(5, 10, 24, 1), rgba(5, 10, 24, 0.9));
+    width: 100%;
+    padding: 30px 0;
+    direction: rtl;
+    border-top: 1px solid rgba(191, 149, 63, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Aref Ruqaa', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.team-name {
+    background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.copyrighttext {
+    color: #cbd5e1;
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.footer-line {
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bf953f, transparent);
+    margin-top: 15px;
+}
+
+/* ===================== موبايل ===================== */
 @media screen and (max-width: 768px) {
 
-    /* الحالة الطبيعية: القائمة مخفية تماماً */
     header.navbar .nav-links {
-        display: none !important; /* إخفاء تام */
+        display: none !important;
         position: absolute;
         top: 100%; 
         right: 0;
@@ -293,7 +331,6 @@ article {
         box-shadow: 0 10px 15px rgba(0,0,0,0.5);
     }
 
-    /* الروابط بداخلها */
     header.navbar .nav-links a {
         display: block !important;
         text-align: center !important;
@@ -304,11 +341,66 @@ article {
         border-bottom: 1px solid rgba(191, 149, 63, 0.15) !important; 
     }
 
-    /* الحالة السحرية: عندما يضيف الجافا سكريبت هذا الكلاس، تظهر القائمة فوراً بكامل روابطها */
     header.navbar .nav-links.open-menu {
-        display: flex !important; /* يجبرها على الظهور الفوري */
-        height: auto !important; /* تتمدد تلقائياً حسب عدد الروابط (الـ 10 صفحات كاملة) */
-        max-height: none !important; /* إلغاء أي تقييد للارتفاع */
-        overflow: visible !important; /* إظهار كل المحتوى المنسدل */
+        display: flex !important;
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    /* الـ article */
+    article {
+        margin: 80px 10px 20px !important;
+        padding: 15px !important;
+        border-radius: 15px !important;
+    }
+
+    /* عنوان الخبر */
+    .news-header h2 {
+        font-size: 1.3rem !important;
+        line-height: 1.6 !important;
+    }
+
+    /* الصورة */
+    .image-box img {
+        width: 100% !important;
+        height: auto !important;
+        border-radius: 10px !important;
+    }
+
+    /* النص */
+    .news-content p,
+    .news-content li {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+    }
+
+    .news-content h3 {
+        font-size: 1.2rem !important;
+    }
+
+    /* قسم الإبلاغ */
+    .report-section {
+        padding: 20px 15px !important;
+    }
+
+    .report-section h3 {
+        font-size: 1.1rem !important;
+    }
+
+    .report-section input {
+        font-size: 1rem !important;
+        padding: 12px !important;
+    }
+
+    .report-section button {
+        font-size: 1rem !important;
+        padding: 14px !important;
+    }
+
+    /* الفوتر */
+    .footer-content {
+        margin-right: 0 !important;
+        padding: 0 15px !important;
     }
 }

@@ -58,66 +58,63 @@
 /* الفوتر                                             */
 /* ================================================== */
 .main-footer {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    background: #000 !important;
-    width: 100% !important;
-    padding: 30px 20px !important;
-    direction: rtl;
-    border-top: 2px solid gold !important;
-    position: relative !important;
-    z-index: 9999 !important;
-    margin-top: 20px !important;
+    background: linear-gradient(to top, rgba(5,10,24,1), rgba(5,10,24,0.85)) !important;
+    padding: 35px 20px 20px !important;
     text-align: center;
+    direction: rtl;
+    border-top: 1px solid rgba(191,149,63,0.3) !important;
+    margin-top: 0 !important;
+    position: relative !important;
+    z-index: 1 !important;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-content {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
+    margin: 0 auto !important;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto !important;
 }
 
 .footer-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     font-family: 'Aref Ruqaa', serif;
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 22px;
     color: #fcf6ba !important;
-    -webkit-text-fill-color: #fcf6ba !important;
-    background: none !important;
-}
-
-.team-name {
-    color: #bf953f !important;
-    -webkit-text-fill-color: #bf953f !important;
-    background: none !important;
-    -webkit-background-clip: unset !important;
-    font-weight: bold;
-    display: inline-block;
+    text-shadow: 0 0 10px rgba(191,149,63,0.5);
+    margin-bottom: 10px;
 }
 
 .copyrighttext {
     color: #cbd5e1 !important;
-    -webkit-text-fill-color: #cbd5e1 !important;
     font-size: 14px;
-    opacity: 0.8;
+    opacity: 0.85;
+    line-height: 1.6;
     margin: 0;
-    display: block !important;
+}
+
+.team-name {
+    font-weight: bold;
+    background: linear-gradient(to bottom, #fcf6ba, #bf953f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.team-name:hover {
+    filter: drop-shadow(0 0 8px rgba(191,149,63,0.8));
+    transform: scale(1.05);
 }
 
 .footer-line {
-    width: 150px;
-    height: 1px;
+    width: 80px;
+    height: 2px;
     background: linear-gradient(90deg, transparent, #bf953f, transparent);
-    margin-top: 15px;
+    margin: 14px auto 0;
 }
 
 /* ================================================== */
